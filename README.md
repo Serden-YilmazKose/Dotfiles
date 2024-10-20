@@ -10,4 +10,3 @@ ln /path/to/dotfile
 ### I plan on making a bash script to add the pushed dotfiles back into their directories, if needed.
 
 
-I plan on making a bash script to add the pushed dotfiles back into their directories, if needed.
