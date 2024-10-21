@@ -225,6 +225,7 @@ assign [class="TelegramDesktop"] $ws4
 assign [class="discord"] $ws4
 assign [class="Signal"] $ws4
 assign [class="codeblocks"] $ws3
+assign [class="Tor Browser"] $ws6
 
 ## STARTUP APPLICATIONS
 exec telegram-desktop
