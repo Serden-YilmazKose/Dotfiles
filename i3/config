@@ -237,8 +237,8 @@ exec firefox
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
 
-gaps inner 5
-gaps outer 13
+gaps inner 7
+gaps outer 7
 
 # gaps
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
