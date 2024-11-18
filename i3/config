@@ -228,10 +228,10 @@ assign [class="codeblocks"] $ws3
 assign [class="Tor Browser"] $ws9
 
 ## STARTUP APPLICATIONS
-exec telegram-desktop
-exec signal-desktop 
-exec discord
-exec codeblocks
+#exec telegram-desktop
+#exec signal-desktop 
+#exec discord
+#exec codeblocks
 exec firefox
 
 ## GAPS
