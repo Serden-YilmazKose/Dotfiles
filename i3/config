@@ -232,7 +232,7 @@ assign [class="Tor Browser"] $ws9
 #exec signal-desktop 
 #exec discord
 #exec codeblocks
-exec firefox
+#exec firefox
 
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
