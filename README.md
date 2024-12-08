@@ -9,4 +9,8 @@ ln /path/to/dotfile
 ```
 ### I plan on making a bash script to add the pushed dotfiles back into their directories, if needed.
 
-
+To replace your default dotfiles with the ones found in this repo, following these commands:
+```bash
+chmod +x dotfiles_script.sh
+./dotfiles_script.sh
+```
