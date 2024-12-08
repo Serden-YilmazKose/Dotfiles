@@ -9,6 +9,8 @@
 general {
         colors = true
         interval = 5
+	#output_format = "dzen2"
+
 }
 
 #order += "ipv6"
@@ -49,5 +51,5 @@ memory {
 }
 
 tztime local {
-        format = "%m-%d %H:%M"
+        format = "%m/%d %H:%M"
 }

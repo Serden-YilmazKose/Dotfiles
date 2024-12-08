@@ -362,9 +362,24 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
+## KEYBOARD LAYOUT
+exec setxkbmap -layout us,fi
+exec setxkbmap -option 'grp:alt_shift_toggle'
+
+## EXTEND SCREEN
+bindsym $mod+Shift+x exec xrandr --output HDMI-1 --auto --right-of eDP-1
+
+## PUT COMPUTER TO HYBRID-SLEEP
+bindsym $mod+Shift+h exec systemctl hybrid-sleep
+
+## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
+bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/clip.txt && yt-dlp -a /home/ssuo/Videos/tmp/clip.txt -o "/home/ssuo/Videos/tmp/%(title)s.%(ext)s"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	## Following line is to FORCE i3 to put the tray on the main monitor
+	tray_output eDP-1
         status_command i3status
 }
 
