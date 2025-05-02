@@ -1,6 +1,7 @@
 " ************************
 "* General Usability
 " ************************
+" TESTING SOFT LINK
 syntax on
 filetype plugin indent on
 set number
