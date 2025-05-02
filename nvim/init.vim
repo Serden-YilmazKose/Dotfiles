@@ -1,6 +1,7 @@
 " ************************
 "* General Usability
 " ************************
+" Testing hardlink power
 syntax on
 filetype plugin indent on
 set number
