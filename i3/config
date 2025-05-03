@@ -219,6 +219,9 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
+## OPEN SOUND MANAGER(S)
+# bindsym $mod+Shift+s exec --no-startup-id pavucontrol
+
 ## WORKSPACE SPECIFIC SETTINGS
 # Assign workspaces
 assign [class="TelegramDesktop"] $ws4
@@ -226,10 +229,11 @@ assign [class="discord"] $ws4
 assign [class="Signal"] $ws4
 assign [class="codeblocks"] $ws3
 assign [class="Tor Browser"] $ws9
+assign [class="qBittorrent"] $ws5
 
 ## STARTUP APPLICATIONS
 #exec telegram-desktop
-#exec signal-desktop 
+#exec signal-desktop
 #exec discord
 #exec codeblocks
 #exec firefox
@@ -363,17 +367,17 @@ mode "$mode_gaps_left" {
 }
 
 ## KEYBOARD LAYOUT
-exec setxkbmap -layout us,fi
-exec setxkbmap -option 'grp:alt_shift_toggle'
+bindsym $mod+l exec setxkbmap -layout us,fi
+# exec setxkbmap -option 'grp:alt_shift_toggle'
 
 ## EXTEND SCREEN
-bindsym $mod+Shift+x exec xrandr --output HDMI-1 --auto --right-of eDP-1
+bindsym $mod+Shift+x exec xrandr --output HDMI-1-1 --auto --right-of eDP-1
 
 ## PUT COMPUTER TO HYBRID-SLEEP
 bindsym $mod+Shift+h exec systemctl hybrid-sleep
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
-bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip 
+bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -381,7 +385,20 @@ bar {
 	## Following line is to FORCE i3 to put the tray on the main monitor
 	tray_output eDP-1
         status_command i3status
+        # status_command ~/.scripts/prayer/prayerstatuswrapper.sh
 }
+
+# ## CHANGE WORKSPACE USING NUMPAD
+# bindsym Mod4+87 workspace number $ws1
+# bindsym Mod4+88 workspace number $ws2
+# bindsym Mod4+89 workspace number $ws3
+# bindsym Mod4+83 workspace number $ws4
+# bindsym Mod4+84 workspace number $ws5
+# bindsym Mod4+85 workspace number $ws6
+# bindsym Mod4+79 workspace number $ws7
+# bindsym Mod4+80 workspace number $ws8
+# bindsym Mod4+81 workspace number $ws9
+# bindsym Mod4+90 workspace number $ws10
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
