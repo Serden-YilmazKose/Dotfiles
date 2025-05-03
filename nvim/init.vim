@@ -115,7 +115,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Map leader tn to open new tab
-nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Leader>tt :tabnew<CR>
 
 " Prompt for filename and split it horizontally
 nnoremap <Leader>fs :split <C-R>=input("File to open (horiz): ")<CR><CR>
@@ -144,6 +144,11 @@ nnoremap <C-M-h> :tabprevious<CR>
 " Map Control alt l to next tab
 nnoremap <C-M-l> :tabnext<CR>
 
+" Map leader p to execute python file
+nnoremap <leader>p :!python3 "%"<CR>
+
+" Map leader t to execute python file
+nnoremap <leader>t :terminal<CR>
 
 " ************************
 "* Set Colorscheme
