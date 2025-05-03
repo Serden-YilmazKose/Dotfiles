@@ -45,10 +45,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -368,7 +368,6 @@ mode "$mode_gaps_left" {
 
 ## KEYBOARD LAYOUT
 bindsym $mod+l exec setxkbmap -layout us,fi
-# exec setxkbmap -option 'grp:alt_shift_toggle'
 
 ## EXTEND SCREEN
 bindsym $mod+Shift+x exec xrandr --output HDMI-1-1 --auto --right-of eDP-1
@@ -385,7 +384,6 @@ bar {
 	## Following line is to FORCE i3 to put the tray on the main monitor
 	tray_output eDP-1
         status_command i3status
-        # status_command ~/.scripts/prayer/prayerstatuswrapper.sh
 }
 
 # ## CHANGE WORKSPACE USING NUMPAD

@@ -8,7 +8,8 @@
 
 general {
         colors = true
-        interval = 5
+        color_good = "#528491"
+        interval = 1
 	#output_format = "dzen2"
 
 }
@@ -18,8 +19,9 @@ general {
 #order += "ethernet _first_"
 order += "battery all"
 #order += "disk /"
-#order += "load"
+order += "load"
 #order += "memory"
+order += "tztime houston"
 order += "tztime local"
 
 wireless _first_ {
@@ -33,6 +35,7 @@ ethernet _first_ {
 }
 
 battery all {
+	last_full_capacity = true
         format = "%status %percentage %remaining"
 }
 
@@ -41,7 +44,7 @@ disk "/" {
 }
 
 load {
-        format = "%1min"
+        format = "%1min %5min %15min"
 }
 
 memory {
@@ -51,5 +54,10 @@ memory {
 }
 
 tztime local {
-        format = "%m/%d %H:%M"
+        format = "%m/%d %H:%M:%S 🇫🇮"
+}
+
+tztime houston {
+        format = "%H:%M 🇺🇸"
+        timezone = "America/Chicago"
 }
