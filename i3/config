@@ -383,18 +383,6 @@ bar {
         status_command i3status
 }
 
-# ## CHANGE WORKSPACE USING NUMPAD
-# bindsym Mod4+87 workspace number $ws1
-# bindsym Mod4+88 workspace number $ws2
-# bindsym Mod4+89 workspace number $ws3
-# bindsym Mod4+83 workspace number $ws4
-# bindsym Mod4+84 workspace number $ws5
-# bindsym Mod4+85 workspace number $ws6
-# bindsym Mod4+79 workspace number $ws7
-# bindsym Mod4+80 workspace number $ws8
-# bindsym Mod4+81 workspace number $ws9
-# bindsym Mod4+90 workspace number $ws10
-
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
