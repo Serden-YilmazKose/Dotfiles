@@ -45,10 +45,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up k
-set $down j
-set $left h
-set $right l
+set $up l
+set $down k
+set $left j
+set $right semicolon
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -366,11 +366,8 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-## KEYBOARD LAYOUT
-bindsym $mod+l exec setxkbmap -layout us,fi
-
 ## EXTEND SCREEN
-bindsym $mod+Shift+x exec xrandr --output HDMI-1-1 --auto --right-of eDP-1
+bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
 
 ## PUT COMPUTER TO HYBRID-SLEEP
 bindsym $mod+Shift+h exec systemctl hybrid-sleep

@@ -1,5 +1,7 @@
 #/bin/zsh
 # UNCOMMENT THE FILES YOU WANT TO BE AFFECTED
+cp i3/extend-screen.sh ~/.i3/extend-screen.sh
+chmod +x ~/.i3/extend-screen.sh
 cp i3/config ~/.config/i3/config
 cp i3/i3status/config ~/.config/i3status/config
 cp neofetch/config.conf ~/.config/neofetch/config.conf
