@@ -148,7 +148,16 @@ nnoremap <C-M-l> :tabnext<CR>
 nnoremap <leader>p :!python3 "%"<CR>
 
 " Map leader t to execute python file
-nnoremap <leader>t :terminal<CR>
+nnoremap <leader>tm :terminal<CR>
+
+" Map leader tm to move the current tab to the right
+nnoremap <leader>ttl :tabmove +1<CR>
+
+" Map leader tl to move the current tab to the left
+nnoremap <leader>tth :tabmove -1<CR>
+
+" Map leader + Esc to exit insert mode in terminal
+tnoremap <leader><Esc> <C-\><C-n>
 
 " ************************
 "* Set Colorscheme
