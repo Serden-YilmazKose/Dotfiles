@@ -220,7 +220,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 ## OPEN SOUND MANAGER(S)
-bindsym $mod+Shift+s exec --no-startup-id pavucontrol && blueman-manager
+bindsym $mod+Shift+s exec --no-startup-id pavucontrol & blueman-manager
 
 ## OPEN FIREFOX
 bindsym $mod+Shift+f exec firefox
