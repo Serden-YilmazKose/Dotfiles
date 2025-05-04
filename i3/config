@@ -220,7 +220,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 ## OPEN SOUND MANAGER(S)
-# bindsym $mod+Shift+s exec --no-startup-id pavucontrol
+bindsym $mod+Shift+s exec --no-startup-id pavucontrol && blueman-manager
+
+## OPEN FIREFOX
+bindsym $mod+Shift+f exec firefox
+
+## OPEN WHATSAPP WEB ON FIREFOX
+bindsym $mod+Shift+w exec firefox --new-window https://web.whatsapp.com; workspace 4
+
 
 ## WORKSPACE SPECIFIC SETTINGS
 # Assign workspaces
@@ -230,13 +237,9 @@ assign [class="Signal"] $ws4
 assign [class="codeblocks"] $ws3
 assign [class="Tor Browser"] $ws9
 assign [class="qBittorrent"] $ws5
-
-## STARTUP APPLICATIONS
-#exec telegram-desktop
-#exec signal-desktop
-#exec discord
-#exec codeblocks
-#exec firefox
+assign [class="pavucontrol"] $ws3
+assign [class="blueman-manager"] $ws3
+assign [class="Blueman-manager"] $ws3
 
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
@@ -374,6 +377,19 @@ bindsym $mod+Shift+h exec systemctl hybrid-sleep
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
 bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
+
+## OPEN ALL WORKSPACES IN THE MAIN MONITOR, OTHER THAN WORKSPACE 10
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output $(xrandr | grep 'connected' | grep 'HDMI' | cut -d' ' -f1)
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

@@ -4,7 +4,7 @@
 " TESTING SOFT LINK
 syntax on
 filetype plugin indent on
-set number
+set relativenumber
 set smartindent
 set nowrap
 set termguicolors
@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
+Plug 'tmsvg/pear-tree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
 call plug#end()
@@ -158,6 +159,9 @@ nnoremap <leader>tth :tabmove -1<CR>
 
 " Map leader + Esc to exit insert mode in terminal
 tnoremap <leader><Esc> <C-\><C-n>
+
+" Compile and run current C++ file with <F5>
+nnoremap <F5> :w<CR>:!g++ -std=c++17 % -o %:r && ./%:r<CR>
 
 " ************************
 "* Set Colorscheme
