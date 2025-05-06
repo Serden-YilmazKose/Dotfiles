@@ -215,6 +215,10 @@ bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection cli
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
 
+## EXTRACT TEXT FROM SELECTION
+bindsym $mod+t exec --no-startup-id maim --format=png --select "/home/$USER/.i3/.selection.png" && tesseract /home/$USER/.i3/.selection.png /home/$USER/.i3/.selection && xclip -sel c < /home/$USER/.i3/.selection.txt && rm /home/$USER/.i3/.selection*
+
+
 ## BRIGHTNESS (taken by Reddit user [deleted])
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
