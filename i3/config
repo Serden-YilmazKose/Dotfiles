@@ -96,7 +96,7 @@ bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod4+h split h
+bindsym Mod4+z split h
 
 # split in vertical orientation
 bindsym Mod4+v split v
@@ -377,7 +377,7 @@ mode "$mode_gaps_left" {
 bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
 
 ## PUT COMPUTER TO HYBRID-SLEEP
-bindsym $mod+Shift+h exec systemctl hybrid-sleep
+bindsym $mod+Shift+Del exec systemctl hybrid-sleep
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
 bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
