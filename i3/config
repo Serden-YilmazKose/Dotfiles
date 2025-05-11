@@ -383,15 +383,17 @@ bindsym $mod+Shift+u exec systemctl hybrid-sleep
 bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
 
 ## OPEN ALL WORKSPACES IN THE MAIN MONITOR, OTHER THAN WORKSPACE 10
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output eDP-1
-workspace 5 output eDP-1
-workspace 6 output eDP-1
-workspace 7 output eDP-1
-workspace 8 output eDP-1
-workspace 9 output eDP-1
+bindsym PRIMARY $(xrandr | grep 'connected' | grep 'eDP' | cut -d' ' -f1)
+# PRIMARY=$(xrandr | grep 'connected' | grep 'eDP' | cut -d' ' -f1)
+workspace 1 output PRIMARY
+workspace 2 output PRIMARY
+workspace 3 output PRIMARY
+workspace 4 output PRIMARY
+workspace 5 output PRIMARY
+workspace 6 output PRIMARY
+workspace 7 output PRIMARY
+workspace 8 output PRIMARY
+workspace 9 output PRIMARY
 workspace 10 output $(xrandr | grep 'connected' | grep 'HDMI' | cut -d' ' -f1)
 
 
@@ -399,7 +401,7 @@ workspace 10 output $(xrandr | grep 'connected' | grep 'HDMI' | cut -d' ' -f1)
 # finds out, if available)
 bar {
 	## Following line is to FORCE i3 to put the tray on the main monitor
-	tray_output eDP-1
+	tray_output PRIMARY
         status_command i3status
 }
 

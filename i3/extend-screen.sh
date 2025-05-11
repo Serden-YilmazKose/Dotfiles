@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # Primary display (usually your laptop)
-PRIMARY="eDP-1"
 
+PRIMARY=$(xrandr | grep 'connected' | grep 'eDP' | cut -d' ' -f1)
 # Find connected HDMI output
 HDMI_OUTPUT=$(xrandr | grep 'onnected' | grep 'HDMI' | cut -d' ' -f1)
 
