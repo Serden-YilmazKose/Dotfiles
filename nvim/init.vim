@@ -164,6 +164,9 @@ tnoremap <leader><Esc> <C-\><C-n>
 " Compile and run current C++ file with <F5>
 nnoremap <F5> :w<CR>:!g++ -std=c++17 % -o %:r && ./%:r<CR>
 
+" Compile and run current C++ file with <F5>
+nnoremap <leader><F5> :w<CR>:!g++ -std=c++17 % -o %:r <CR>
+
 " ************************
 "* Set Colorscheme
 " ************************
