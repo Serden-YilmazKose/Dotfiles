@@ -125,4 +125,6 @@ alias update='sudo pacman -Syu && yay -Syu'
 alias ..='cd ..'
 alias ls='ls --color=auto -lah'
 alias grep='grep --color=auto'
+
+# Some line I had to add to make the tesseract ocr work, idk why
 export TESSDATA_PREFIX=/usr/share/tessdata

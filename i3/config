@@ -244,6 +244,7 @@ assign [class="qBittorrent"] $ws5
 assign [class="pavucontrol"] $ws3
 assign [class="blueman-manager"] $ws3
 assign [class="Blueman-manager"] $ws3
+assign [class="kleopatra"] $ws5
 
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
