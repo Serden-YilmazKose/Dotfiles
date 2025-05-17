@@ -21,8 +21,8 @@ order += "battery all"
 #order += "disk /"
 order += "load"
 #order += "memory"
-order += "tztime houston"
-order += "tztime local"
+order += "tztime helsinki"
+order += "tztime chicago"
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -53,11 +53,13 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
-tztime local {
-        format = "%m/%d %H:%M:%S 🇫🇮"
+tztime helsinki {
+        # format = "%m/%d %H:%M:%S 🇫🇮"
+        format = "%H:%M 🇫🇮"
+        timezone = "Europe/Helsinki"
 }
 
-tztime houston {
-        format = "%H:%M 🇺🇸"
+tztime chicago {
+        format = "%m/%d %H:%M:%S 🇺🇸"
         timezone = "America/Chicago"
 }
