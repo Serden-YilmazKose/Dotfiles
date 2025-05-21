@@ -29,3 +29,7 @@ interval=1
 label=🇺🇸
 command=TZ=America/Chicago date "+%m/%d %H:%M:%S"
 interval=1
+
+[prayer]
+command=~/.config/i3blocks/scripts/prayer_times.sh
+interval=60
