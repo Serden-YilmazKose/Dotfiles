@@ -123,7 +123,7 @@ alias ll='ls -la'
 alias gs='git status'
 alias update='sudo pacman -Syu && yay -Syu'
 alias ..='cd ..'
-alias ls='ls --color=auto -lah'
+alias ls='ls --color=auto -lh'
 alias grep='grep --color=auto'
 
 # Some line I had to add to make the tesseract ocr work, idk why
