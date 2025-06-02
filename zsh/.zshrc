@@ -131,3 +131,5 @@ export TESSDATA_PREFIX=/usr/share/tessdata
 
 # Some thing for my snes constroller
 export SDL_GAMECONTROLLERCONFIG="0300e9f579000000110000001001000012117,Retro Controller,platform:Linux,a:b1,b:b2,x:b0,y:b3,back:b8,start:b9,leftshoulder:b4,rightshoulder:b5,dpup:a1-,dpdown:a1,dpleft:a0-,dpright:a0,"
+export VISUAL=nvim
+export EDITOR=nvim
