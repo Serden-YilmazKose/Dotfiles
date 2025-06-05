@@ -22,6 +22,9 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'tmsvg/pear-tree'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
 call plug#end()
