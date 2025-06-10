@@ -22,11 +22,13 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'tmsvg/pear-tree'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'iamcco/markdown-preview.nvim'
 Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
+" Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 
@@ -68,6 +70,9 @@ let g:indentLine_color_term = 239
 let g:indentLine_concealcursor = 'nc'
 let g:indentLine_conceallevel = 2
 let g:indentLine_showTrailingBlanklineIndent = 1
+
+" Vim preview
+nnoremap ;; :LLPStart<CR>
 
 
 " ************************
