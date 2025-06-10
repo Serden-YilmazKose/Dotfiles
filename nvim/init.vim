@@ -72,7 +72,9 @@ let g:indentLine_conceallevel = 2
 let g:indentLine_showTrailingBlanklineIndent = 1
 
 " Vim preview
-nnoremap ;; :LLPStart<CR>
+let g:livepreview_engine_cmd = 'pdflatex % && bibtex %:r && pdflatex % && pdflatex %'
+let g:livepreview_previewer = 'evince'
+
 
 
 " ************************
@@ -175,6 +177,8 @@ nnoremap <F5> :w<CR>:!g++ -std=c++17 % -o %:r && ./%:r<CR>
 " Compile and run current C++ file with <F5>
 nnoremap <leader><F5> :w<CR>:!g++ -std=c++17 % -o %:r <CR>
 
+" Make ;; a keyboard shortcut to open the latex pdf preview
+nnoremap ;; :LLPStart<CR>
 " ************************
 "* Set Colorscheme
 " ************************
