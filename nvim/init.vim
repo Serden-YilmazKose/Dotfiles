@@ -7,7 +7,7 @@ filetype plugin indent on
 set number
 set relativenumber
 set smartindent
-set nowrap
+"set nowrap
 set termguicolors
 set splitright
 
@@ -22,8 +22,8 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'tmsvg/pear-tree'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'iamcco/markdown-preview.nvim'
 Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
@@ -167,7 +167,7 @@ tnoremap <leader><Esc> <C-\><C-n>
 " Compile and run current C++ file with <F5>
 nnoremap <F5> :w<CR>:!g++ -std=c++17 % -o %:r && ./%:r<CR>
 
-" Compile and run current C++ file with <F5>
+" Compile current C++ file with Leade <F5>
 nnoremap <leader><F5> :w<CR>:!g++ -std=c++17 % -o %:r <CR>
 
 " ************************
