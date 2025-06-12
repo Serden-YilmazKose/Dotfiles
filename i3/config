@@ -200,7 +200,7 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 ## WALLPAPER
-exec_always feh --no-fehbg --bg-fill /home/ericw/Pictures/baldeagle.jpg
+exec_always feh --bg-fill --no-fehbg Pictures/baldeagle.jpg
 ## REDSHIFT
 exec --no-startup-id redshift-gtk
 
