@@ -44,7 +44,12 @@ let g:ale_completion_enabled = 1
 
 " Enable ALE fixing (fix on save)
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['eslint'], 'python': ['ruff', 'autopep8', 'autoflake'], 'cpp':['astyle', 'clang-format', 'clangtidy', 'uncrustify'], 'java':['clang-format']}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['eslint'], 'python': ['ruff', 'autopep8', 'autoflake', 'black', 'autopep8', 'isort', 'remove_trailing_lines', 'trim_whitespace'], 'cpp':['astyle', 'clang-format', 'clangtidy', 'uncrustify'], 'java':['clang-format']}
+
+" Enable ALE Linting
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
 
 " Enable indentLine
 let g:indentLine_enabled = 1
