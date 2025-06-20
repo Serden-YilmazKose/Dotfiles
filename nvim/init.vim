@@ -101,7 +101,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :wq<CR>
 
 " Map leader c to copy
-nnoremap <Leader>c "+yy<CR>
+nnoremap <Leader>c "+yyk<CR>
 
 " Map leader C to copy and paste
 nnoremap <Leader>C "+yyP<CR>
