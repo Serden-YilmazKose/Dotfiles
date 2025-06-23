@@ -25,9 +25,9 @@ label=🇫🇮
 command=TZ=Europe/Helsinki date "+%H:%M"
 interval=1
 
-[tztime-newyork]
+[tztime-local]
 label=🇺🇸
-command=TZ=America/New_York date "+%m/%d %H:%M:%S"
+command=TZ=America/Chicago date "+%m/%d %H:%M:%S"
 interval=1
 
 [prayer]
