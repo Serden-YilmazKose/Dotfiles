@@ -381,7 +381,9 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
 bindsym $mod+Shift+u exec systemctl hybrid-sleep
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
-bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
+# bindsym $mod+Shift+y exec xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && yt-dlp -a ~/Videos/tmp/.clip -o "~/Videos/tmp/%(title)s.%(ext)s" && rm ~/Videos/tmp/.clip
+bindsym $mod+Shift+y exec bash -c 'mkdir -p ~/Videos/tmp && xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && url=$(head -n 1 ~/Videos/tmp/.clip) && title=$(yt-dlp --get-title "$url") && yt-dlp -f "bv*+ba" "$url" -o "~/Videos/tmp/%(title)s.%(ext)s" && notify-send "yt-dlp" "Video: $title Download finished" && rm ~/Videos/tmp/.clip'
+
 
 ## OPEN ALL WORKSPACES IN THE MAIN MONITOR, OTHER THAN WORKSPACE 10
 bindsym PRIMARY $(xrandr | grep 'connected' | grep 'eDP' | cut -d' ' -f1)
@@ -396,6 +398,9 @@ workspace 7 output PRIMARY
 workspace 8 output PRIMARY
 workspace 9 output PRIMARY
 workspace 10 output $(xrandr | grep 'connected' | grep 'HDMI' | cut -d' ' -f1)
+
+# Send all firefox windows to workspace 8
+bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to workspace 8'
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
