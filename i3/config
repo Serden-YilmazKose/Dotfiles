@@ -234,17 +234,19 @@ bindsym $mod+Shift+w exec --no-startup-id sh -c '~/.i3/whatsapp.sh'
 
 ## WORKSPACE SPECIFIC SETTINGS
 # Assign workspaces
-assign [class="TelegramDesktop"] $ws4
-assign [class="discord"] $ws4
-assign [class="Signal"] $ws4
-assign [class="codeblocks"] $ws3
-assign [class="Tor Browser"] $ws9
-assign [class="qBittorrent"] $ws5
-assign [class="pavucontrol"] $ws3
-assign [class="blueman-manager"] $ws3
 assign [class="Blueman-manager"] $ws3
-assign [class="kleopatra"] $ws4
 assign [class="KeePassXC"] $ws4
+assign [class="Signal"] $ws4
+assign [class="TelegramDesktop"] $ws4
+assign [class="Tor Browser"] $ws9
+assign [class="blueman-manager"] $ws3
+assign [class="codeblocks"] $ws3
+assign [class="discord"] $ws4
+assign [class="kleopatra"] $ws4
+assign [class="monero-core"] $ws8
+assign [class="pavucontrol"] $ws3
+assign [class="qBittorrent"] $ws5
+assign [class="vlc"] $ws5
 
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux

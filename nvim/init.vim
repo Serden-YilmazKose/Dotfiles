@@ -106,6 +106,9 @@ nnoremap <Leader>c "+yyk<CR>
 " Map leader C to copy and paste
 nnoremap <Leader>C "+yyP<CR>
 
+" Maper Leader Leader C to copy several lines
+vnoremap <Leader>c "+yyk<CR>
+
 " Map leader Q to @ for macros
 nnoremap Q @
 vnoremap Q @
