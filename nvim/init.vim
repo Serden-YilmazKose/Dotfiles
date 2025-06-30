@@ -187,6 +187,10 @@ nnoremap <leader><F5> :w<CR>:!g++ -std=c++17 % -o %:r <CR>
 
 " Make ;; a keyboard shortcut to open the latex pdf preview
 nnoremap ;; :LLPStart<CR>
+
+" Make Ctrl Backspage to delete the previous word
+inoremap <C-H> <C-W>
+
 " ************************
 "* Set Colorscheme
 " ************************
