@@ -228,6 +228,9 @@ bindsym $mod+Shift+s exec --no-startup-id pavucontrol & blueman-manager
 ## OPEN FIREFOX
 bindsym $mod+Shift+f exec firefox
 
+## OPEN FIREFOX PRIVATE
+bindsym $mod+Shift+i exec firefox --private-window
+
 ## OPEN WHATSAPP WEB ON FIREFOX
 bindsym $mod+Shift+w exec --no-startup-id sh -c '~/.i3/whatsapp.sh'
 
