@@ -191,6 +191,9 @@ nnoremap ;; :LLPStart<CR>
 " Make Ctrl Backspage to delete the previous word
 inoremap <C-H> <C-W>
 
+" Enter normal mode from insert mode, using jk
+inoremap jk <Esc>
+
 " ************************
 "* Set Colorscheme
 " ************************
