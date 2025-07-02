@@ -249,6 +249,7 @@ assign [class="kleopatra"] $ws4
 assign [class="monero-core"] $ws8
 assign [class="pavucontrol"] $ws3
 assign [class="qBittorrent"] $ws5
+assign [class="thunderbird"] $ws4
 assign [class="vlc"] $ws5
 
 ## GAPS
