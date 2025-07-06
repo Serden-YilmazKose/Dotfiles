@@ -15,17 +15,20 @@ while read -r url; do
 
   echo "Processing: $url"
 
+  # Download the page HTML once
+  html=$(curl -s "$url")
+
   if [[ "$url" == *"/channel/"* ]]; then
-    # Extract channel ID from URL directly
     channel_id="${url##*/}"
   else
-    # Use curl and grep to find channel_id
-    html=$(curl -s "$url")
     channel_id=$(echo "$html" | grep -oP 'channel_id=[a-zA-Z0-9_-]+' | head -n1 | cut -d= -f2)
   fi
 
+  # Extract channel name from <title> tag
+  channel_name=$(echo "$html" | grep -oP '(?<=<title>).*?(?=</title>)' | sed 's/ - YouTube//' | tr -d '\n')
+
   if [[ -n "$channel_id" ]]; then
-    echo "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id" >> "$output_file"
+    echo "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id youtube # $channel_name" >> "$output_file"
   else
     echo "❌ Failed to extract channel ID from: $url" >&2
   fi

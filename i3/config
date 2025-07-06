@@ -244,6 +244,7 @@ assign [class="TelegramDesktop"] $ws4
 assign [class="Tor Browser"] $ws9
 assign [class="blueman-manager"] $ws3
 assign [class="codeblocks"] $ws3
+assign [class="dino"] $ws4
 assign [class="discord"] $ws4
 assign [class="kleopatra"] $ws4
 assign [class="monero-core"] $ws8
