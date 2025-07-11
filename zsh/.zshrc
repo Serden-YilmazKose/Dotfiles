@@ -119,11 +119,11 @@ fi
 # DOTFILES CONFIG ALIAS
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ggp='git pull --ff-only'
-alias ll='ls -la'
+alias ll='ls -l'
+alias la='ls -la'
 alias gs='git status'
 alias update='sudo pacman -Syu && yay -Syu'
 alias ..='cd ..'
-alias ls='ls --color=auto -lh'
 alias grep='grep --color=auto'
 
 # Some line I had to add to make the tesseract ocr work, idk why
