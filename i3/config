@@ -237,6 +237,9 @@ bindsym $mod+Shift+w exec --no-startup-id sh -c '~/.i3/whatsapp.sh'
 ## OPEN VIDEO
 bindsym $mod+m exec --no-startup-id sh -c '~/.i3/video.sh'
 
+## SELECT SCRIPT
+bindsym $mod+Shift+p exec --no-startup-id sh -c '~/.i3/select_script.sh'
+
 ## WORKSPACE SPECIFIC SETTINGS
 # Assign workspaces
 assign [class="Blueman-manager"] $ws3
