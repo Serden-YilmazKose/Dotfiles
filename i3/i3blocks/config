@@ -33,3 +33,7 @@ interval=1
 [prayer]
 command=~/.config/i3blocks/scripts/prayer_times.sh
 interval=60
+
+[volume]
+command=~/.config/i3blocks/scripts/volume.sh
+interval=15
