@@ -15,7 +15,7 @@ set splitright
 " ************************
 "* Plugins
 " ************************
-call plug#begin("~/.vim/plugged")
+call plug#begin("~/.config/nvim/plugged")
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
@@ -26,6 +26,8 @@ Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'xuhdev/vim-latex-live-preview'
+"
 " Plug 'lervag/vimtex'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim'
