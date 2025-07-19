@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bookmark="$(xclip -o)"
+bookmark="$(xsel --clipboard --output)"
 file="$HOME/.i3/bookmarks.txt"
 
 if grep -Fxq "$bookmark" "$file"; then
