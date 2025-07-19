@@ -243,6 +243,9 @@ bindsym $mod+Shift+p exec --no-startup-id sh -c '~/.i3/select_script.sh'
 ## OPEN BOOKMARKS
 bindsym $mod+b exec --no-startup-id sh -c '~/.i3/bookmark.sh'
 
+## SAVE BOOKMARK
+bindsym $mod+shift+b exec --no-startup-id sh -c '~/.i3/save_bookmark.sh'
+
 ## OPEN SCRIPT IN DMENU
 bindsym $mod+o exec --no-startup-id sh -c '~/.i3/open.sh'
 
