@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=$(xclip -o)
+url=$(xsel --clipboard --output)
 html=$(curl -s "$url")
 channel_id=$(echo "$html" | grep -oP 'channel_id=[a-zA-Z0-9_-]+' | head -n1 | cut -d= -f2)
 # channel_id="${url##*/}"

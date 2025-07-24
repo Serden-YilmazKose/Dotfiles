@@ -122,8 +122,8 @@ set -o vi
 # DOTFILES CONFIG ALIAS
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ggp='git pull --ff-only'
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lAh'
 alias gs='git status'
 alias update='sudo pacman -Syu && yay -Syu'
 alias ..='cd ..'
