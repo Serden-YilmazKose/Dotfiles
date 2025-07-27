@@ -249,8 +249,14 @@ bindsym $mod+shift+b exec --no-startup-id sh -c '~/.i3/save_bookmark.sh'
 ## OPEN SCRIPT IN DMENU
 bindsym $mod+o exec --no-startup-id sh -c '~/.i3/open.sh'
 
-## WORKSPACE SPECIFIC SETTINGS
-# Assign workspaces
+## Focus mouse on Firefox windows
+bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id sh -c '~/.i3/move-cursor-to-focused.sh'
+
+## PUT COMPUTER TO HYBRID-SLEEP
+bindsym $mod+Shift+u exec --no-startup-id sh -c '~/.i3/hybrid_shutdown.sh'
+
+# WORKSPACE SPECIFIC SETTINGS
+## Assign workspaces
 assign [class="Blueman-manager"] $ws3
 assign [class="KeePassXC"] $ws4
 assign [class="Signal"] $ws4
@@ -397,9 +403,6 @@ mode "$mode_gaps_left" {
 
 ## EXTEND SCREEN
 bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
-
-## PUT COMPUTER TO HYBRID-SLEEP
-bindsym $mod+Shift+u exec systemctl hybrid-sleep
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
 bindsym $mod+Shift+y exec sh -c 'mkdir -p ~/Videos/tmp && xclip -selection clipboard -o -t text/plain > ~/Videos/tmp/.clip && url=$(head -n 1 ~/Videos/tmp/.clip) && title=$(yt-dlp --get-title "$url") && yt-dlp -f "bv*+ba" "$url" -o "~/Videos/tmp/%(title)s.%(ext)s" && notify-send "yt-dlp" "Video: $title Download finished" && rm ~/Videos/tmp/.clip'
