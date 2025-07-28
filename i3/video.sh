@@ -6,7 +6,7 @@ while [[ ! -f $video ]] ; do
     video="$(ls | dmenu -l 15 -p "Select video to watch: ")"
     [[ -z "$video" ]] && break
     [[ -d "$video" ]]; cd "$video" && continue
-    [[ -f "$video" ]]; mpv "$video" & break
+    [[ -f "$video" ]]; vlc "$video" & break
 done
 
 input=$(dmenu -p "Delete video after viewing [YES]: ")
