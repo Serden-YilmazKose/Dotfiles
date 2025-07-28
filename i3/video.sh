@@ -8,3 +8,6 @@ while [[ ! -f $video ]] ; do
     [[ -d "$video" ]]; cd "$video" && continue
     [[ -f "$video" ]]; mpv "$video" & break
 done
+
+input=$(dmenu -p "Delete video after viewing [YES]: ")
+[[ "$input" == "YES" ]] && rm -v "$video"
