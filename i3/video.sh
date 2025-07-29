@@ -6,7 +6,7 @@ cd ~/Videos/ || exit 1
 while [[ ! -f $video ]] ; do
     video="$(ls | dmenu -l 15 -p "Select video to watch: ")"
     [[ -z "$video" ]] && break
-    [[ ! -d "$video" ]] || [[ ! -f "$video" ]] && continue
+    [[ ! -d "$video" ]] && [[ ! -f "$video" ]] && continue
     [[ -d "$video" ]] && [[ "$video" == "tmp" ]] && player="mpv"
     [[ -d "$video" ]]; cd "$video" && continue
     [[ -f "$video" ]]; $player "$video" && break
