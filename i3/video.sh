@@ -7,6 +7,7 @@ cd ~/Videos/ || exit 1
 while [[ ! -f $video ]] ; do
     video="$(ls | dmenu -l 15 -p "Select video to watch: ")"
     [[ -z "$video" ]] && break
+    [[ -z $( ls | grep -F "$video" ) ]] && continue
     [[ ! -d "$video" ]] && [[ ! -f "$video" ]] && continue
     [[ $(pwd | grep "eighty") ]] && player="vlc"
     [[ -d "$video" ]]; cd "$video" && continue
