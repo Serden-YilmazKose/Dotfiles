@@ -2,8 +2,9 @@
 # Open dmenu, and show the list of videos and ask the user to select on
 video=""
 player="mpv"
-boolOpened=$false
-cd ~/Videos/ || exit 1
+isOpened="false"
+isTmp="false"
+cd $HOME/Videos/ || exit 1
 while [[ ! -f $video ]] ; do
     video="$(ls | dmenu -l 15 -p "Select video to watch: ")"
     [[ -z "$video" ]] && break
@@ -11,7 +12,7 @@ while [[ ! -f $video ]] ; do
     [[ ! -d "$video" ]] && [[ ! -f "$video" ]] && continue
     [[ $(pwd | grep "eighty") ]] && player="vlc"
     [[ -d "$video" ]]; cd "$video" && continue
-    [[ -f "$video" ]]; $player "$video" && $boolOpened=$true && break
+    [[ -f "$video" ]]; $player "$video" && isOpened="true" && break
 done
 
-[[ $isOpened==$true ]] && input=$(dmenu -p "Delete video after viewing [YES]: ") && [[ "$input" == "YES" ]] && rm -v "$video"
+[[ -z $(pwd | grep -F "/lol" ) ]] && [[ "$isOpened" = "true" ]] && input=$(dmenu -p "Delete video after viewing [YES]: ") && [[ "$input" == "YES" ]] && rm -v "$video"
