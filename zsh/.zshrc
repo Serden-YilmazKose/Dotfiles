@@ -128,6 +128,7 @@ alias gs='git status'
 alias update='sudo pacman -Syu && yay -Syu'
 alias ..='cd ..'
 alias grep='grep --color=auto'
+alias news='newsboat'
 
 # Some line I had to add to make the tesseract ocr work, idk why
 export TESSDATA_PREFIX=/usr/share/tessdata
