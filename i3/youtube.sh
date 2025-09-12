@@ -12,7 +12,8 @@ xclip -selection clipboard -o -t text/plain > "$clip_file" || {
 }
 
 # Read URL
-url=$(head -n 1 "$clip_file")
+# url=$(head -n 1 "$clip_file")
+url=$(xclip -selection clipboard -o -t text/plain | head -n 1 | xargs)
 if [[ -z "$url" ]]; then
     notify-send "yt-dlp" "No URL found in clipboard"
     rm -f "$clip_file"
