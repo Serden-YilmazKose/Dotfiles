@@ -83,6 +83,15 @@ let g:livepreview_engine_cmd = 'pdflatex % && bibtex %:r && pdflatex % && pdflat
 let g:livepreview_previewer = 'evince'
 
 
+" ************************
+"* Set filetype
+" ************************
+
+" Set .asm file type to nasm
+augroup nasm_ft
+  autocmd!
+  autocmd BufNewFile,BufRead *.asm set filetype=nasm
+augroup END
 
 " ************************
 "* Keyboard Bindings
@@ -184,8 +193,11 @@ tnoremap <leader><Esc> <C-\><C-n>
 " Compile and run current C++ file with <F5>
 nnoremap <F5> :w<CR>:!g++ -std=c++17 % -o %:r && ./%:r<CR>
 
-" Compile current C++ file with Leade <F5>
+" Compile current C++ file with Leader <F5>
 nnoremap <leader><F5> :w<CR>:!g++ -std=c++17 % -o %:r <CR>
+
+" Compile current nasm file with Leader A
+nnoremap <leader>a :!nasm -f elf64 % -o %:r.o && ld %:r.o -o %:r && ./%:r<CR>
 
 " Make ;; a keyboard shortcut to open the latex pdf preview
 nnoremap ;; :LLPStart<CR>
