@@ -200,7 +200,7 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 ########## MY CONFIG ##########
 ## RANDOMIZE WALLPAPER
-exec --no-startup-id sh -c '~/.i3/feh.sh'
+exec --no-startup-id ~/.i3/feh.sh
 
 ## REDSHIFT
 exec --no-startup-id redshift-gtk
