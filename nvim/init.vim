@@ -1,16 +1,14 @@
 " ************************
 "* General Usability
 " ************************
-" TESTING SOFT LINK
 syntax on
 filetype plugin indent on
 set number
 set relativenumber
 set smartindent
-"set nowrap
+syntax enable
 set termguicolors
 set splitright
-
 
 " ************************
 "* Plugins
