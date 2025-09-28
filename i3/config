@@ -258,6 +258,12 @@ bindsym $mod+b exec --no-startup-id sh -c '~/.i3/bookmark.sh'
 ## SAVE BOOKMARK
 bindsym $mod+shift+b exec --no-startup-id sh -c '~/.i3/save_bookmark.sh'
 
+## OPEN TOREADS
+bindsym $mod+n exec --no-startup-id sh -c '~/.i3/toread.sh'
+
+## SAVE TOREAD
+bindsym $mod+shift+n exec --no-startup-id sh -c '~/.i3/save_toread.sh'
+
 ## OPEN SCRIPT IN DMENU
 bindsym $mod+o exec --no-startup-id sh -c '~/.i3/open.sh'
 
@@ -294,6 +300,18 @@ assign [class="vlc"] $ws5
 ## SOUNDBOARD
 # Bruh
 bindsym $mod+Mod2+KP_0 exec sh -c 'mpv --no-video $HOME/Music/soundboard/bruh.mp3'
+
+# Chick
+bindsym $mod+Mod2+KP_1 exec sh -c 'mpv --no-video $HOME/Music/soundboard/chick.mp3'
+
+# AA
+bindsym $mod+Mod2+KP_2 exec sh -c 'mpv --no-video $HOME/Music/soundboard/aa.mp3'
+
+# RN
+bindsym $mod+Mod2+KP_3 exec sh -c 'mpv --no-video $HOME/Music/soundboard/rn.mp3'
+
+# Bell
+bindsym $mod+Mod2+KP_4 exec sh -c 'mpv --no-video $HOME/Music/soundboard/bell.mp3'
 
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
