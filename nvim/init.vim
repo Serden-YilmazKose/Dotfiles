@@ -24,8 +24,8 @@ Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'xuhdev/vim-latex-live-preview'
 "
 " Plug 'lervag/vimtex'
