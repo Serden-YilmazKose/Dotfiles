@@ -132,6 +132,7 @@ alias news='newsboat'
 alias plover='PYTHONWARNINGS="ignore" plover'
 alias dvo='setxkbmap us dvorak'
 alias aoeui='setxkbmap us'
+alias caps='setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return"'
 
 # Some line I had to add to make the tesseract ocr work, idk why
 export TESSDATA_PREFIX=/usr/share/tessdata

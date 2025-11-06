@@ -211,8 +211,12 @@ exec --no-startup-id redshift-gtk
 ## QBITTORRENT
 exec --no-startup-id qbittorrent
 
-## QBITTORRENT
+## MULLVAD
 exec --no-startup-id mullvad-vpn
+
+## MAP CAPS LOCK TO RETURN
+exec --no-startup-id setxkbmap -option caps:none
+exec --no-startup-id xmodmap -e "keycode 66 = Return"
 
 ##  Screenshots in files
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
@@ -279,6 +283,9 @@ bindsym $mod+Shift+y exec sh -c '~/.i3/youtube.sh'
 ## EXTEND SCREEN
 bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
 
+## MULLVAD VPN
+bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
+
 # WORKSPACE SPECIFIC SETTINGS
 ## Assign workspaces
 assign [class="Blueman-manager"] $ws3
@@ -313,6 +320,11 @@ bindsym $mod+Mod2+KP_3 exec sh -c 'mpv --no-video $HOME/Music/soundboard/rn.mp3'
 # Bell
 bindsym $mod+Mod2+KP_4 exec sh -c 'mpv --no-video $HOME/Music/soundboard/bell.mp3'
 
+# B
+bindsym $mod+Mod2+KP_5 exec sh -c 'mpv --no-video $HOME/Music/soundboard/b.mp3'
+
+# Sad
+bindsym $mod+Mod2+KP_6 exec sh -c 'mpv --no-video $HOME/Music/soundboard/sad.mp3'
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
 
