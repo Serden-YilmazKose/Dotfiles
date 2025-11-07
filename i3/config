@@ -283,6 +283,9 @@ bindsym $mod+Shift+y exec sh -c '~/.i3/youtube.sh'
 ## EXTEND SCREEN
 bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
 
+## CHANGE KEYBOARD LAYOUT
+bindsym $mod+Ctrl+space exec --no-startup-id ~/.i3/change_keyboard.sh
+
 ## MULLVAD VPN
 bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
 
