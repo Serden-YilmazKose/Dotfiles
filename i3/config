@@ -328,6 +328,14 @@ bindsym $mod+Mod2+KP_5 exec sh -c 'mpv --no-video $HOME/Music/soundboard/b.mp3'
 
 # Sad
 bindsym $mod+Mod2+KP_6 exec sh -c 'mpv --no-video $HOME/Music/soundboard/sad.mp3'
+
+
+## ARROW
+bindsym Alt+h exec xdotool key Left
+bindsym Alt+j exec xdotool key Down
+bindsym Alt+k exec xdotool key Up
+bindsym Alt+l exec xdotool key Right
+
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
 
