@@ -111,6 +111,9 @@ nnoremap <Leader>w :w<CR>
 " Map leader x to save quit
 nnoremap <Leader>x :wq<CR>
 
+" Map leader Q to quit without saving
+nnoremap <Leader>Q :q!<CR>
+
 " Map leader c to copy
 nnoremap <Leader>c "+yyk<CR>
 
@@ -175,8 +178,8 @@ nnoremap <C-M-h> :tabprevious<CR>
 " Map Control alt l to next tab
 nnoremap <C-M-l> :tabnext<CR>
 
-" Map leader p to execute python file
-nnoremap <leader>p :!python3 "%"<CR>
+" Map leader p to open pdf using zathura
+nnoremap <leader>p :!zathura "%:r.pdf" & disown<CR><CR>
 
 " Map leader t to execute python file
 nnoremap <leader>tm :terminal<CR>
