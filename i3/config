@@ -248,43 +248,46 @@ bindsym $mod+Shift+i exec firefox --private-window
 bindsym $mod+Shift+t exec thunar
 
 ## OPEN WHATSAPP WEB ON FIREFOX
-bindsym $mod+Shift+w exec --no-startup-id sh -c '~/.i3/whatsapp.sh'
+bindsym $mod+Shift+w exec --no-startup-id ~/.local/bin/whatsapp.sh
 
 ## OPEN VIDEO
-bindsym $mod+m exec --no-startup-id sh -c '~/.i3/video.sh'
+bindsym $mod+m exec --no-startup-id ~/.local/bin/video.sh
 
 ## SELECT SCRIPT
-bindsym $mod+Shift+p exec --no-startup-id sh -c '~/.i3/select_script.sh'
+bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/select_script.sh
 
 ## OPEN BOOKMARKS
-bindsym $mod+b exec --no-startup-id sh -c '~/.i3/bookmark.sh'
+bindsym $mod+b exec --no-startup-id ~/.local/bin/bookmark.sh
 
 ## SAVE BOOKMARK
-bindsym $mod+shift+b exec --no-startup-id sh -c '~/.i3/save_bookmark.sh'
+bindsym $mod+shift+b exec --no-startup-id ~/.local/bin/save_bookmark.sh
 
 ## OPEN TOREADS
-bindsym $mod+n exec --no-startup-id sh -c '~/.i3/toread.sh'
+bindsym $mod+n exec --no-startup-id ~/.local/bin/toread.sh
 
 ## SAVE TOREAD
-bindsym $mod+shift+n exec --no-startup-id sh -c '~/.i3/save_toread.sh'
+bindsym $mod+shift+n exec --no-startup-id ~/.local/bin/save_toread.sh
 
 ## OPEN SCRIPT IN DMENU
-bindsym $mod+o exec --no-startup-id sh -c '~/.i3/open.sh'
+bindsym $mod+o exec --no-startup-id ~/.local/bin/open.sh
 
 ## Focus mouse on Firefox windows
-bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id sh -c '~/.i3/move-cursor-to-focused.sh'
+bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id ~/.local/bin/move-cursor-to-focused.sh
 
 ## PUT COMPUTER TO HYBRID-SLEEP
-bindsym $mod+Shift+u exec --no-startup-id sh -c '~/.i3/hybrid_shutdown.sh'
+bindsym $mod+Shift+u exec --no-startup-id c ~/.local/bin/hybrid_shutdown.sh
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
-bindsym $mod+Shift+y exec sh -c '~/.i3/youtube.sh'
+bindsym $mod+Shift+y exec ~/.local/bin/youtube.sh
 
 ## EXTEND SCREEN
-bindsym $mod+Shift+x exec --no-startup-id ~/.i3/extend-screen.sh
+bindsym $mod+Shift+x exec --no-startup-id ~/.local/bin/extend-screen.sh
 
 ## CHANGE KEYBOARD LAYOUT
-bindsym $mod+Ctrl+space exec --no-startup-id ~/.i3/change_keyboard.sh
+bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/change_keyboard.sh
+
+## SCRIPT KILLER
+bindsym Alt+Shift+k exec --no-startup-id ~/.local/bin/killer.sh ; notify-send "LOL"
 
 ## MULLVAD VPN
 bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
@@ -309,25 +312,25 @@ assign [class="vlc"] $ws5
 
 ## SOUNDBOARD
 # Bruh
-bindsym $mod+Mod2+KP_0 exec sh -c 'mpv --no-video $HOME/Music/soundboard/bruh.mp3'
+bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
 
 # Chick
-bindsym $mod+Mod2+KP_1 exec sh -c 'mpv --no-video $HOME/Music/soundboard/chick.mp3'
+bindsym $mod+Mod2+KP_1 exec mpv --no-video $HOME/Music/soundboard/chick.mp3
 
 # AA
-bindsym $mod+Mod2+KP_2 exec sh -c 'mpv --no-video $HOME/Music/soundboard/aa.mp3'
+bindsym $mod+Mod2+KP_2 exec mpv --no-video $HOME/Music/soundboard/aa.mp3
 
 # RN
-bindsym $mod+Mod2+KP_3 exec sh -c 'mpv --no-video $HOME/Music/soundboard/rn.mp3'
+bindsym $mod+Mod2+KP_3 exec mpv --no-video $HOME/Music/soundboard/rn.mp3
 
 # Bell
-bindsym $mod+Mod2+KP_4 exec sh -c 'mpv --no-video $HOME/Music/soundboard/bell.mp3'
+bindsym $mod+Mod2+KP_4 exec mpv --no-video $HOME/Music/soundboard/bell.mp3
 
 # B
-bindsym $mod+Mod2+KP_5 exec sh -c 'mpv --no-video $HOME/Music/soundboard/b.mp3'
+bindsym $mod+Mod2+KP_5 exec mpv --no-video $HOME/Music/soundboard/b.mp3
 
 # Sad
-bindsym $mod+Mod2+KP_6 exec sh -c 'mpv --no-video $HOME/Music/soundboard/sad.mp3'
+bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
 
 
 ## ARROW
