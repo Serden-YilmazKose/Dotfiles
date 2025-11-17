@@ -203,7 +203,7 @@ bindsym Mod4+r mode "resize"
 # exec --no-startup-id ~/.i3/feh.sh
 
 ## EXTEND SCREEN
-exec --no-startup-id ~/.i3/extend-screen.sh
+exec --no-startup-id ~/.local/bin/extend-screen.sh
 
 ## REDSHIFT
 exec --no-startup-id redshift-gtk
@@ -285,9 +285,6 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.local/bin/extend-screen.sh
 
 ## CHANGE KEYBOARD LAYOUT
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/change_keyboard.sh
-
-## SCRIPT KILLER
-bindsym Alt+Shift+k exec --no-startup-id ~/.local/bin/killer.sh ; notify-send "LOL"
 
 ## MULLVAD VPN
 bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
