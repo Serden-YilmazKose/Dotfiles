@@ -1,13 +1,16 @@
 #!/bin/bash
 
-cd ~/.local/bin || exit 1
+cd "$HOME/.local/bin" || exit 1
 
 scripts_array=()
-scripts=$(ls *.sh)
 
 for script in *.sh; do
-    [[ -f $script ]] && [[ ! $script=="killer.sh" ]] && pgrep $script && scripts_array+=("$script")
+    [[ ! -f "$script" ]] && continue
+    [[ "$script" == "killer.sh" ]] && continue
+    [[ "$script" == "select_script.sh" ]] && continue
+    pgrep -f "$script" && scripts_array+=("$script")
 done
 
-[[ ! -z $scripts_array ]] && selection=$(echo $scripts_array | dmenu -i -l 10 -p " Selection script to kill: ") || exit 1
-kill $(pgrep $selection) || notify-send "Killer" "Unable to kill: $selection"
+[[ ${#scripts_array[@]} -eq 0 ]] && notify-send "Killer" "No running scripts." && exit 1
+selection=$(printf "%s\n" "${scripts_array[@]}" | dmenu -i -l 10 -p " Selection script to kill: ") || exit 1
+kill $(pgrep -f $selection) && notify-send "Killer" "Killed: $selection" || notify-send "Killer" "Unable to kill: $selecttion"
