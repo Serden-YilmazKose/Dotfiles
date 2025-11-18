@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME
+cd $HOME || exit 0
 dd if=/dev/zero of=first_pass bs=8M status=progress
 rm first_pass
 sync
