@@ -275,7 +275,7 @@ bindsym $mod+o exec --no-startup-id ~/.local/bin/open.sh
 bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id ~/.local/bin/move-cursor-to-focused.sh
 
 ## PUT COMPUTER TO HYBRID-SLEEP
-bindsym $mod+Shift+u exec --no-startup-id c ~/.local/bin/hybrid_shutdown.sh
+bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/hybrid_shutdown.sh
 
 ## EXTRACT URL FROM CLIPBOARD AND DOWNLOAD VIDEO
 bindsym $mod+Shift+y exec ~/.local/bin/youtube.sh
