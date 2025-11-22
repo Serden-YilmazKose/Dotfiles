@@ -6,7 +6,7 @@ isOpened="false"
 isTmp="false"
 cd $HOME/Videos/ || exit 1
 while [[ ! -f $video ]] ; do
-    video="$(ls | dmenu -i -l 15 -p "Select video to watch: ")"
+    video="$(ls -tr | dmenu -i -l 15 -p "Select video to watch: ")"
     [[ -z "$video" ]] && break
     [[ -z $( ls | grep -F "$video" ) ]] && continue
     [[ ! -d "$video" ]] && [[ ! -f "$video" ]] && continue
