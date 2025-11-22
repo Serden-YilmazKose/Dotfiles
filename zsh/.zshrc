@@ -134,6 +134,7 @@ alias dvo='setxkbmap us dvorak'
 alias aoeui='setxkbmap us'
 alias caps='setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return"'
 alias c='clear'
+alias dot='cd $HOME/Documents/repos/Dotfiles'
 
 # Some line I had to add to make the tesseract ocr work, idk why
 export TESSDATA_PREFIX=/usr/share/tessdata
