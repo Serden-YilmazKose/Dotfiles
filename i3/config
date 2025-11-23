@@ -336,6 +336,12 @@ bindsym Alt+j exec xdotool key Down
 bindsym Alt+k exec xdotool key Up
 bindsym Alt+l exec xdotool key Right
 
+## AUDACIOUS
+bindsym XF86AudioPause exec audacious --play-pause
+bindsym XF86AudioPlay exec audacious --play-pause
+bindsym XF86AudioNext exec audacious --fwd
+bindsym XF86AudioPrev exec audacious --rew
+
 ## GAPS
 #https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
 
