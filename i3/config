@@ -198,10 +198,9 @@ mode "resize" {
 }
 
 bindsym Mod4+r mode "resize"
-########## MY CONFIG ##########
-## RANDOMIZE WALLPAPER
-# exec --no-startup-id ~/.i3/feh.sh
 
+########## MY CONFIG ##########
+# LAUNCH PROGRAMS ON STARTUP
 ## EXTEND SCREEN
 exec --no-startup-id ~/.local/bin/extend-screen.sh
 
@@ -218,6 +217,11 @@ exec --no-startup-id mullvad-vpn
 exec --no-startup-id setxkbmap -option caps:none
 exec --no-startup-id xmodmap -e "keycode 66 = Return"
 
+# UTILITIES
+## BRIGHTNESS (taken by Reddit user [deleted])
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
 ##  Screenshots in files
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
 bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
@@ -228,13 +232,22 @@ bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection cli
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
 
+## ARROW
+bindsym Alt+h exec xdotool key Left
+bindsym Alt+j exec xdotool key Down
+bindsym Alt+k exec xdotool key Up
+bindsym Alt+l exec xdotool key Right
+
+## AUDACIOUS
+bindsym XF86AudioPause exec audacious --play-pause
+bindsym XF86AudioPlay exec audacious --play-pause
+bindsym XF86AudioNext exec audacious --fwd
+bindsym XF86AudioPrev exec audacious --rew
+
 ## EXTRACT TEXT FROM SELECTION
 bindsym $mod+t exec --no-startup-id maim --format=png --select "/home/$USER/.i3/.selection.png" && tesseract /home/$USER/.i3/.selection.png /home/$USER/.i3/.selection && xclip -sel c < /home/$USER/.i3/.selection.txt && rm /home/$USER/.i3/.selection*
 
-## BRIGHTNESS (taken by Reddit user [deleted])
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-
+# OPEN PROGRAM
 ## OPEN SOUND MANAGER(S)
 bindsym $mod+Shift+s exec --no-startup-id pavucontrol & blueman-manager
 
@@ -250,6 +263,10 @@ bindsym $mod+Shift+t exec thunar
 ## OPEN WHATSAPP WEB ON FIREFOX
 bindsym $mod+Shift+w exec --no-startup-id ~/.local/bin/whatsapp.sh
 
+## MULLVAD VPN
+bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
+
+# LAUNCH SCRIPT
 ## OPEN VIDEO
 bindsym $mod+m exec --no-startup-id ~/.local/bin/video.sh
 
@@ -268,9 +285,6 @@ bindsym $mod+n exec --no-startup-id ~/.local/bin/toread.sh
 ## SAVE TOREAD
 bindsym $mod+shift+n exec --no-startup-id ~/.local/bin/save_toread.sh
 
-## OPEN SCRIPT IN DMENU
-bindsym $mod+o exec --no-startup-id ~/.local/bin/open.sh
-
 ## Focus mouse on Firefox windows
 bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id ~/.local/bin/move-cursor-to-focused.sh
 
@@ -286,11 +300,8 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.local/bin/extend-screen.sh
 ## CHANGE KEYBOARD LAYOUT
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/change_keyboard.sh
 
-## MULLVAD VPN
-bindsym $mod+Shift+m exec --no-startup-id mullvad-vpn
-
-# WORKSPACE SPECIFIC SETTINGS
-## Assign workspaces
+# WORKSPACE SETTINGS
+## ASSIGN WORKSPACE TO CLASS PROGRAMS
 assign [class="Blueman-manager"] $ws3
 assign [class="KeePassXC"] $ws4
 assign [class="Signal"] $ws4
@@ -307,43 +318,45 @@ assign [class="qBittorrent"] $ws5
 assign [class="thunderbird"] $ws4
 assign [class="vlc"] $ws5
 
-## SOUNDBOARD
-# Bruh
+## OPEN ALL WORKSPACES IN THE MAIN MONITOR, OTHER THAN WORKSPACE 10
+set $PRIMARY eDP-1
+set $SECONDARY HDMI-1-1
+
+workspace 1 output $PRIMARY
+workspace 2 output $SECONDARY
+workspace 3 output $SECONDARY
+workspace 4 output $SECONDARY
+workspace 5 output $SECONDARY
+workspace 6 output $SECONDARY
+workspace 7 output $SECONDARY
+workspace 8 output $SECONDARY
+workspace 9 output $SECONDARY
+workspace 10 output $SECONDARY
+
+# SOUNDBOARD
+## Bruh
 bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
 
-# Chick
+## Chick
 bindsym $mod+Mod2+KP_1 exec mpv --no-video $HOME/Music/soundboard/chick.mp3
 
-# AA
+## AA
 bindsym $mod+Mod2+KP_2 exec mpv --no-video $HOME/Music/soundboard/aa.mp3
 
-# RN
+## RN
 bindsym $mod+Mod2+KP_3 exec mpv --no-video $HOME/Music/soundboard/rn.mp3
 
-# Bell
+## Bell
 bindsym $mod+Mod2+KP_4 exec mpv --no-video $HOME/Music/soundboard/bell.mp3
 
-# B
+## B
 bindsym $mod+Mod2+KP_5 exec mpv --no-video $HOME/Music/soundboard/b.mp3
 
-# Sad
+## Sad
 bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
 
-
-## ARROW
-bindsym Alt+h exec xdotool key Left
-bindsym Alt+j exec xdotool key Down
-bindsym Alt+k exec xdotool key Up
-bindsym Alt+l exec xdotool key Right
-
-## AUDACIOUS
-bindsym XF86AudioPause exec audacious --play-pause
-bindsym XF86AudioPlay exec audacious --play-pause
-bindsym XF86AudioNext exec audacious --fwd
-bindsym XF86AudioPrev exec audacious --rew
-
-## GAPS
-#https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
+# GAPS
+# https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
 
 gaps inner 7
 gaps outer 7
@@ -470,19 +483,6 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-
-## OPEN ALL WORKSPACES IN THE MAIN MONITOR, OTHER THAN WORKSPACE 10
-bindsym PRIMARY $(xrandr | grep 'connected' | grep 'eDP' | cut -d' ' -f1)
-workspace 1 output PRIMARY
-workspace 2 output HDMI-1-1
-workspace 3 output HDMI-1-1
-workspace 4 output HDMI-1-1
-workspace 5 output HDMI-1-1
-workspace 6 output HDMI-1-1
-workspace 7 output HDMI-1-1
-workspace 8 output HDMI-1-1
-workspace 9 output HDMI-1-1
-workspace 10 output HDMI-1-1
 
 # Send all firefox windows to workspace 8
 bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to workspace 8'
