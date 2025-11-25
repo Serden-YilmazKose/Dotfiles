@@ -199,7 +199,15 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
-########## MY CONFIG ##########
+#########################
+####### MY CONFIG #######
+#########################
+
+# GAPS
+## GAPS
+gaps inner 7
+gaps outer 7
+
 # LAUNCH PROGRAMS ON STARTUP
 ## EXTEND SCREEN
 exec --no-startup-id ~/.local/bin/extend-screen.sh
@@ -300,6 +308,34 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.local/bin/extend-screen.sh
 ## CHANGE KEYBOARD LAYOUT
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/change_keyboard.sh
 
+## EMOJI
+bindsym $mod+o exec --no-startup-id ~/.local/bin/emoji.sh
+
+# Send all firefox windows to workspace 8
+bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to workspace 8'
+
+# SOUNDBOARD
+## Bruh
+bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
+
+## Chick
+bindsym $mod+Mod2+KP_1 exec mpv --no-video $HOME/Music/soundboard/chick.mp3
+
+## AA
+bindsym $mod+Mod2+KP_2 exec mpv --no-video $HOME/Music/soundboard/aa.mp3
+
+## RN
+bindsym $mod+Mod2+KP_3 exec mpv --no-video $HOME/Music/soundboard/rn.mp3
+
+## Bell
+bindsym $mod+Mod2+KP_4 exec mpv --no-video $HOME/Music/soundboard/bell.mp3
+
+## B
+bindsym $mod+Mod2+KP_5 exec mpv --no-video $HOME/Music/soundboard/b.mp3
+
+## Sad
+bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
+
 # WORKSPACE SETTINGS
 ## ASSIGN WORKSPACE TO CLASS PROGRAMS
 assign [class="Blueman-manager"] $ws3
@@ -332,160 +368,6 @@ workspace 7 output $SECONDARY
 workspace 8 output $SECONDARY
 workspace 9 output $SECONDARY
 workspace 10 output $SECONDARY
-
-# SOUNDBOARD
-## Bruh
-bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
-
-## Chick
-bindsym $mod+Mod2+KP_1 exec mpv --no-video $HOME/Music/soundboard/chick.mp3
-
-## AA
-bindsym $mod+Mod2+KP_2 exec mpv --no-video $HOME/Music/soundboard/aa.mp3
-
-## RN
-bindsym $mod+Mod2+KP_3 exec mpv --no-video $HOME/Music/soundboard/rn.mp3
-
-## Bell
-bindsym $mod+Mod2+KP_4 exec mpv --no-video $HOME/Music/soundboard/bell.mp3
-
-## B
-bindsym $mod+Mod2+KP_5 exec mpv --no-video $HOME/Music/soundboard/b.mp3
-
-## Sad
-bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
-
-# GAPS
-# https://itsfoss.com/i3-customization/#use-i3-gaps-in-linux
-
-gaps inner 7
-gaps outer 7
-
-# gaps
-set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_horiz Horizontal Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_verti Vertical Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_top Top Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_right Right Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_bottom Bottom Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_left Left Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym h      mode "$mode_gaps_horiz"
-        bindsym v      mode "$mode_gaps_verti"
-        bindsym t      mode "$mode_gaps_top"
-        bindsym r      mode "$mode_gaps_right"
-        bindsym b      mode "$mode_gaps_bottom"
-        bindsym l      mode "$mode_gaps_left"
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_horiz" {
-        bindsym plus  gaps horizontal current plus 5
-        bindsym minus gaps horizontal current minus 5
-        bindsym 0     gaps horizontal current set 0
-
-        bindsym Shift+plus  gaps horizontal all plus 5
-        bindsym Shift+minus gaps horizontal all minus 5
-        bindsym Shift+0     gaps horizontal all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_verti" {
-        bindsym plus  gaps vertical current plus 5
-        bindsym minus gaps vertical current minus 5
-        bindsym 0     gaps vertical current set 0
-
-        bindsym Shift+plus  gaps vertical all plus 5
-        bindsym Shift+minus gaps vertical all minus 5
-        bindsym Shift+0     gaps vertical all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_top" {
-        bindsym plus  gaps top current plus 5
-        bindsym minus gaps top current minus 5
-        bindsym 0     gaps top current set 0
-
-        bindsym Shift+plus  gaps top all plus 5
-        bindsym Shift+minus gaps top all minus 5
-        bindsym Shift+0     gaps top all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_right" {
-        bindsym plus  gaps right current plus 5
-        bindsym minus gaps right current minus 5
-        bindsym 0     gaps right current set 0
-
-        bindsym Shift+plus  gaps right all plus 5
-        bindsym Shift+minus gaps right all minus 5
-        bindsym Shift+0     gaps right all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_bottom" {
-        bindsym plus  gaps bottom current plus 5
-        bindsym minus gaps bottom current minus 5
-        bindsym 0     gaps bottom current set 0
-
-        bindsym Shift+plus  gaps bottom all plus 5
-        bindsym Shift+minus gaps bottom all minus 5
-        bindsym Shift+0     gaps bottom all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_left" {
-        bindsym plus  gaps left current plus 5
-        bindsym minus gaps left current minus 5
-        bindsym 0     gaps left current set 0
-
-        bindsym Shift+plus  gaps left all plus 5
-        bindsym Shift+minus gaps left all minus 5
-        bindsym Shift+0     gaps left all set 0
-
-        bindsym Return mode "$mode_gaps"
-        bindsym Escape mode "default"
-}
-
-
-# Send all firefox windows to workspace 8
-bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to workspace 8'
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
