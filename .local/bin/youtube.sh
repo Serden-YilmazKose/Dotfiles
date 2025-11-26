@@ -38,7 +38,7 @@ notify-send "yt-dlp" "Downloading \"$title\""
 yt-dlp \
     -f 'bv*[ext=mp4]+ba[ext=m4a]/bv*+ba/best' \
     "$url" \
-    -o "$tmp_dir/%(title)s.%(ext)s"
+    -o "$tmp_dir/%(title)s [%(id)s].%(ext)s"
 
 # Notify user
 notify-send "yt-dlp" "✅ Video: \"$title\"\nDownload finished"
