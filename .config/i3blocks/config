@@ -36,4 +36,5 @@ interval=60
 
 [volume]
 command=~/.config/i3blocks/scripts/volume.sh
-interval=15
+interval=once
+signal=6
