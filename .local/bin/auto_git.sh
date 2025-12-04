@@ -1,0 +1,1 @@
+/home/ericw/Documents/repos/Dotfiles/.local/bin/auto_git.sh
