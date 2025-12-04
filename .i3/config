@@ -231,14 +231,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 ##  Screenshots in files
-bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
-bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
+bindsym Print exec ~/.local/bin/screenshot.sh file_full
+bindsym $mod+Print exec ~/.local/bin/screenshot.sh file_active
+bindsym Shift+Print exec ~/.local/bin/screenshot.sh file_select
 
 ## Screenshots in clipboards
-bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec ~/.local/bin/screenshot.sh clip_full
+bindsym Ctrl+$mod+Print exec ~/.local/bin/screenshot.sh clip_active
+bindsym Ctrl+Shift+Print exec ~/.local/bin/screenshot.sh clip_select
 
 ## ARROW
 bindsym Alt+h exec xdotool key Left
