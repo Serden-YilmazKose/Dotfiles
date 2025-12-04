@@ -14,9 +14,6 @@ xclip -selection clipboard -o -t text/plain > "$clip_file" || {
 # Read URL
 # url=$(head -n 1 "$clip_file")
 url=$(xclip -selection clipboard -o -t text/plain | head -n 1 | xargs)
-
-# Check if url has an ampersand in it, if so, sanitize it
-echo "$url" | grep -q "&" && url=$($HOME/.local/bin/sanitize_youtube.sh "$url" silent)
 if [[ -z "$url" ]]; then
     notify-send "yt-dlp" "No URL found in clipboard"
     rm -f "$clip_file"
@@ -38,7 +35,7 @@ notify-send "yt-dlp" "Downloading \"$title\""
 yt-dlp \
     -f 'bv*[ext=mp4]+ba[ext=m4a]/bv*+ba/best' \
     "$url" \
-    -o "$tmp_dir/%(title)s [%(id)s].%(ext)s"
+    -o "$tmp_dir/%(title)s.%(ext)s"
 
 # Notify user
 notify-send "yt-dlp" "✅ Video: \"$title\"\nDownload finished"
