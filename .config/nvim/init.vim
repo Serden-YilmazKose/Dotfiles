@@ -53,6 +53,9 @@ let g:ale_linters = {
 \   'python': ['pylint'],
 \}
 
+let g:ale_linters['java'] = []
+let g:ale_fixers['java'] = []
+
 " Enable indentLine
 let g:indentLine_enabled = 1
 
@@ -207,9 +210,6 @@ nnoremap ;; :LLPStart<CR>
 
 " Make Ctrl Backspage to delete the previous word
 inoremap <C-H> <C-W>
-
-" Enter normal mode from insert mode, using jk
-inoremap jk <Esc>
 
 " ************************
 "* Set Colorscheme
