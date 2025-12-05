@@ -20,6 +20,12 @@ interval=60
 command=uptime | awk -F'load average: ' '{print $2}'
 interval=15
 
+[mullvad]
+label=🦫
+command=~/.local/bin/mullvad.sh
+interval=once
+signal=2
+
 [packages]
 label=📦
 command=~/.local/bin/update.sh
