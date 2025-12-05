@@ -26,6 +26,12 @@ command=~/.local/bin/update.sh
 interval=once
 signal=3
 
+[newsboat]
+label=📰
+command=~/.local/bin/unread_news.sh
+interval=once
+signal=4
+
 [tztime-local]
 label=🇺🇸
 command=TZ=America/Chicago date "+%H:%M"
