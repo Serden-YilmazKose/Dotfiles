@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # If some mullvad.sh is running, quit
 # You can manually kill using the killer command
 # running=$(pgrep -c -f mullvad.sh)
