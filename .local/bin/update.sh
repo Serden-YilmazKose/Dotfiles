@@ -4,10 +4,8 @@
 updates=$(pacman -Qu)
 
 # If there are updates, send a notification
-if [[ -n "$updates" ]]; then
-    # Send notification
-    notify-send -u critical "Package Updates Available" "You have updates available for the following packages:\n$updates" --icon=dialog-information
-else
-    # No updates available
-    notify-send "No Updates" "Your system is up to date!" --icon=dialog-information
-fi
+[[ -n "$updates" ]] && notify-send -u critical "Package Updates Available" "You have updates available for the following packages:\n$updates" --icon=dialog-information
+
+# Update i3blocks
+package_number=$(echo -n "$updates" | wc -l)
+echo "$package_number" && pkill -RTMIN+3 i3blocks
