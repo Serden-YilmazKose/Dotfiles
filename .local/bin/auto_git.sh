@@ -11,9 +11,17 @@ git_status=$(git status --short)
 # Create commit message template
 message="Auto commit: "
 
+# Modify the git status to have just the file path
+git_status=$(echo "$git_status" | sed 's/^ M //')
+# echo "$git_status"
+# echo "$git_status"
+# echo "$git_status"
+# echo "$git_status"
+
 # Loop through the modified files
-for file in "$git_status"; do
-    file=$(echo "$file" | sed 's/^ M.*\///')
+# for file in "$git_status"; do
+echo "$git_status" | while IFS= read -r file; do
+    echo "$file"
     git add "$file"
     git commit -m "$message$file"
 done
