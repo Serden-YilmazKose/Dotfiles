@@ -38,6 +38,11 @@ command=~/.local/bin/unread_news.sh
 interval=once
 signal=4
 
+[notifs]
+label=🗨️
+command=~/.local/bin/notifs.sh
+interval=60
+
 [tztime-local]
 label=🇺🇸
 command=TZ=America/Chicago date "+%H:%M"
