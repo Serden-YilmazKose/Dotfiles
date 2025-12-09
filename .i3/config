@@ -375,8 +375,7 @@ workspace 10 output $SECONDARY
 bar {
         status_command i3blocks -c ~/.config/i3blocks/config
 	## Following line is to FORCE i3 to put the tray on the main monitor
-	tray_output PRIMARY
-        # status_command i3status
+	# tray_output PRIMARY
 }
 
 #######################################################################
