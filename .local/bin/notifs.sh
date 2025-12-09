@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Get the Telegram window name, then use paramterer expansion to get the number
-telegram=$(xdotool getwindowname $(xdotool search --classname Telegram) 2> /dev/null | grep "Telegram.*[0-9]+")
+for class in $(xdotool search --class Telegram);do
+    telegram=$(xdotool getwindowname "$class")
+    echo "$telegram" | grep -qE "Telegram \([0-9]+\)" && break
+done
 telegram="${telegram##*\(}"
 telegram="${telegram%%\)*}"
 
@@ -11,21 +14,20 @@ telegram="${telegram%%\)*}"
 # Search for the signal window
 for class in $(xdotool search --class signal);do
     signal=$(xdotool getwindowname "$class")
-    echo "$signal" | grep -q "[0-9]+" && break
+    echo "$signal" | grep -qE "Signal \([0-9]+\)" && break
 done
 signal="${signal##*\(}"
 signal="${signal%%\)*}"
-
 [[ -z "$signal" ]] && signal=0
 
 # Search for the whatsapp window
 for class in $(xdotool search --class firefox);do
-    whatsapp=$(xdotool getwindowname "$class")
-    echo "$whatsapp" | grep -q "WhatsApp" && break
+    tmp=$(xdotool getwindowname "$class")
+    echo "$tmp" | grep -qE "^\([0-9]+\).*WhatsApp" && whatsapp="$tmp" && break
 done
-
 whatsapp="${whatsapp##*\(}"
 whatsapp="${whatsapp%%\)*}"
+[[ -z "$whatsapp" ]] && whatsapp=0
 
 total=$((whatsapp + signal + telegram))
 echo "$total"
