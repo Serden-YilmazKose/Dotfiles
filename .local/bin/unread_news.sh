@@ -5,4 +5,4 @@
 news=$(newsboat -x print-unread || echo "-1")
 # Use parameter expression to get the first word (number), and echo it out
 news="${news%% *}"
-echo "$news" && pkill -RTMIN+4 i3blocks
+echo "$news"
