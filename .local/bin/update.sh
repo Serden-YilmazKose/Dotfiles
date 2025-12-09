@@ -8,4 +8,4 @@ updates=$(pacman -Qu)
 
 # Update i3blocks
 package_number=$(echo -n "$updates" | wc -l)
-echo "$package_number" && pkill -RTMIN+3 i3blocks
+echo "$package_number"
