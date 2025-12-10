@@ -350,6 +350,7 @@ assign [class="dino"] $ws4
 assign [class="discord"] $ws4
 assign [class="kleopatra"] $ws4
 assign [class="monero-core"] $ws8
+assign [class="org.mozilla.Thunderbird"] $ws4
 assign [class="pavucontrol"] $ws3
 assign [class="qBittorrent"] $ws5
 assign [class="thunderbird"] $ws4
