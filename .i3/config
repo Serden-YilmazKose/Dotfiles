@@ -339,6 +339,7 @@ bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
 
 # WORKSPACE SETTINGS
 ## ASSIGN WORKSPACE TO CLASS PROGRAMS
+assign [class="Audacious"] $ws5
 assign [class="Blueman-manager"] $ws3
 assign [class="KeePassXC"] $ws4
 assign [class="Signal"] $ws4
