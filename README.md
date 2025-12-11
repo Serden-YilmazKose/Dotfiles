@@ -15,4 +15,3 @@ To replace your default dotfiles with the ones found in this repo, following the
 chmod +x dotfiles_script.sh
 ./dotfiles_script.sh
 ```
-### Text Lorem Ipm
