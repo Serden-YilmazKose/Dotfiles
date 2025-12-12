@@ -10,10 +10,7 @@ current_date=$(date +'%m/%d')
 today_data=$(grep -i "^$current_date" "$csv_file" | sed 's/^[ \t]*//;s/[ \t]*$//')
 
 # If no data found for today, exit
-if [ -z "$today_data" ]; then
-    echo "Prayer times not found for today"
-    exit 1
-fi
+[ -z "$today_data" ] && echo "⁉️" && exit 1
 
 # Extract the prayer times from the CSV line
 fajr=$(echo "$today_data" | cut -d ',' -f 3)
@@ -50,25 +47,29 @@ time_left=0
 # Loop through the prayer times and find the next one
 for prayer_time in "$fajr_timestamp" "$dhuhr_timestamp" "$asr_timestamp" "$maghrib_timestamp" "$isha_timestamp"; do
     if [ "$prayer_time" -gt "$current_time_timestamp" ]; then
-        if [ "$prayer_time" -eq "$fajr_timestamp" ]; then
-            next_prayer="Fajr"
-        elif [ "$prayer_time" -eq "$dhuhr_timestamp" ]; then
-            next_prayer="Dhuhr"
-        elif [ "$prayer_time" -eq "$asr_timestamp" ]; then
-            next_prayer="Asr"
-        elif [ "$prayer_time" -eq "$maghrib_timestamp" ]; then
-            next_prayer="Maghrib"
-        elif [ "$prayer_time" -eq "$isha_timestamp" ]; then
-            next_prayer="Isha"
-        fi
-        time_left=$((($prayer_time - $current_time_timestamp) / 60)) # Time left in minutes
+        [ "$prayer_time" -eq "$fajr_timestamp" ] && next_prayer="🌅"
+        [ "$prayer_time" -eq "$dhuhr_timestamp" ] && next_prayer="☀️"
+        [ "$prayer_time" -eq "$asr_timestamp" ] && next_prayer="⛅"
+        [ "$prayer_time" -eq "$maghrib_timestamp" ] && next_prayer="🌙"
+        [ "$prayer_time" -eq "$isha_timestamp" ] && next_prayer="🛏️"
+        # Time left in minutes
+        time_left=$((($prayer_time - $current_time_timestamp) / 60))
         break
     fi
 done
 
 # Output the next prayer and time left
 if [ -z "$next_prayer" ]; then
-    echo "No more prayers today"
-else
-    echo "$next_prayer in $time_left min"
+    tomorrow_date=$(date -d "tomorrow" +'%m/%d')
+    tomorrow_data=$(grep -i "^$tomorrow_date" "$csv_file")
+    [ -z "$tomorrow_data" ] && echo "❓" && exit 1
+
+    tomorrow_fajr=$(echo "$tomorrow_data" | cut -d ',' -f 3)
+    fajr_24h=$(convert_to_24h "$tomorrow_fajr")
+    fajr_ts=$(date -d "$tomorrow_date $fajr_24h" +%s)
+
+    next_prayer="🌅"
+    time_left=$((($fajr_ts - $current_time_timestamp) / 60 ))
 fi
+
+echo "$next_prayer: $time_left mins"
