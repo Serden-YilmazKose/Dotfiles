@@ -34,4 +34,3 @@ emoji_file="$HOME/.local/share/files/emoji"
 # Add the ": ", so avoid getting island countries (Carribean Netherlands)
 emoji=$(grep ": $mullvad_status" "$emoji_file")
 emoji="${emoji%% *}"
-echo "$emoji" && pkill -RTMIN+2 i3blocks
