@@ -7,5 +7,5 @@ updates=$(pacman -Qu)
 [[ -n "$updates" ]] && notify-send -u critical "Package Updates Available" "You have updates available for the following packages:\n$updates" --icon=dialog-information
 
 # Update i3blocks
-package_number=$(echo "$pdates" | grep -cF ">")
+package_number=$(echo "$updates" | grep -cF ">")
 echo "$package_number"
