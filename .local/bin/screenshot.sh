@@ -17,5 +17,5 @@ case $style in
     clip_select)
         maim --hidecursor --format=png --select | xclip -selection clipboard -t image/png;;
     *)
-        notify-send "Screenshot" "Failed: No argument specified";;
+        notify-send "Screenshot" "Failed: No argument specified" && exit 1;;
 esac
