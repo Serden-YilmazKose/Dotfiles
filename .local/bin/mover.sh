@@ -12,6 +12,7 @@ for content in ./*; do
     dir="${content#./}"
     dir="${dir%.*}"
     echo "Moving $file..."
-    mkdir -p "$dir"
+    # Continue if the projected directory already exsits, this is to avoid overwriting
+    [ ! -d file ] && mkdir -p "$dir" || continue
     mv -v "$file" "$dir"
 done
