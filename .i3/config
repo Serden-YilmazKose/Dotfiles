@@ -337,6 +337,15 @@ bindsym $mod+Mod2+KP_5 exec mpv --no-video $HOME/Music/soundboard/b.mp3
 ## Sad
 bindsym $mod+Mod2+KP_6 exec mpv --no-video $HOME/Music/soundboard/sad.mp3
 
+## Sb
+bindsym $mod+Mod2+KP_7 exec mpv --no-video $HOME/Music/soundboard/sb.mp3
+
+## G
+bindsym $mod+Mod2+KP_8 exec mpv --no-video $HOME/Music/soundboard/g.mp3
+
+## V
+bindsym $mod+Mod2+KP_9 exec mpv --no-video $HOME/Music/soundboard/v.mp3
+
 # WORKSPACE SETTINGS
 ## ASSIGN WORKSPACE TO CLASS PROGRAMS
 assign [class="Audacious"] $ws5
