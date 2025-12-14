@@ -3,7 +3,6 @@
 video=""
 player="mpv"
 isOpened="false"
-isTmp="false"
 dir=$HOME/Videos
 cd $HOME/Videos/ || exit 1
 while [[ ! -f $video ]] ; do
