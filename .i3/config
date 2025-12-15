@@ -294,8 +294,8 @@ bindsym $mod+n exec --no-startup-id ~/.local/bin/toread.sh
 ## SAVE TOREAD
 bindsym $mod+shift+n exec --no-startup-id ~/.local/bin/save_toread.sh
 
-## Focus mouse on Firefox windows
-bindsym $mod+u [class='firefox'] focus ; exec --no-startup-id ~/.local/bin/move-cursor-to-focused.sh
+## MOVE MOUSE TO FOCUSED WINDOW
+bindsym $mod+u exec --no-startup-id ~/.local/bin/move-cursor-to-focused.sh
 
 ## PUT COMPUTER TO HYBRID-SLEEP
 bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/hybrid_shutdown.sh
