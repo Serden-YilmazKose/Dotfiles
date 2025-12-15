@@ -11,13 +11,13 @@ output_to_file() {
         # Echo it to the end of the output file
         echo "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id youtube # $channel_name" >> "$output_file"
     done
-    notify-send "yt2rss" "YouTube RSS feed(s) pasted to $output_file!"
+    otify-send "yt2rss" "YouTube RSS feed(s) pasted to $output_file!"
 }
 
 output_to_clip() {
     url=$(xsel --clipboard --output)
     html=$(curl -s "$url")
-    channel_id=$(echo "$html" | grep -oP 'channel_id=[a-zA-Z0-9_-]+' | head -n1 | cut -d= -f2) || continue
+    channel_id=$(echo "$html" | grep -oP 'channel_id=[a-zA-Z0-9_-]+' | head -n1 | cut -d= -f2) || return
     channel_name=$(echo "$html" | grep -oP '(?<=<title>).*?(?=</title>)' | sed 's/ - YouTube//' | tr -d '\n')
     echo -n "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id youtube # $channel_name" | xclip -selection clipboard && notify-send "yt2rss" "Youtube RSS feed copied to clipboard!"
 }
