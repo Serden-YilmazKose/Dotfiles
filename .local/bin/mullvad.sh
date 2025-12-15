@@ -26,6 +26,7 @@ mullvad_status="${mullvad_status##* }"
 
 # If the status is USA, change to United States
 [[ "$mullvad_status" == "USA" ]] && mullvad_status="United States"
+[[ "$mullvad_status" == "UK" ]] && mullvad_status="United Kingdom"
 
 # Specify emoji file as emoji_file
 emoji_file="$HOME/.local/share/files/emoji"
