@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # To remove anything after the "&" in a youtube link, which usually indicates a playlist
 
 # Get url from clipboard or from an argument
@@ -8,7 +8,7 @@
 url="$(echo "$url" | sed "s/&.*$//")"
 
 # If the argument silent was given, then echo the output
-[[ $2 == "silent" ]] && echo -n "$url" && exit 0
+[[ "$2" == "silent" ]] && echo -n "$url" && exit 0
 
 # Load clipboard with sanitized url
 echo -n "$url" | xclip -selection clipboard && notify-send "Link sanitize!" "$url is sanitized"
