@@ -1,6 +1,6 @@
 #!/bin/bash
-$HOME/.local/bin/move-cursor-to-focused.sh
+"$HOME/.local/bin/move-cursor-to-focused.sh"
 file=/$HOME/.i3/bookmarks.txt
-bookmark=$(cat $file | dmenu -i -l 20 -p "Search for a bookmark: " | sed "s/ #.*$//")
-xdotool type $bookmark
-echo $bookmark | grep -q -E "^http.://|^about:profiles" && xdotool key Enter
+bookmark=$(cat "$file" | dmenu -i -l 20 -p "Search for a bookmark: " | sed "s/ #.*$//")
+xdotool type "$bookmark"
+echo "$bookmark" | grep -q -E "^http.://|^about:profiles" && xdotool key Enter
