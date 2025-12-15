@@ -12,9 +12,10 @@ git_status=$(git status --short)
 message="Auto commit: "
 
 # Modify the git status to have just the file path
-git_status=$(echo "$git_status" | sed 's/^ M //')
+# git_status=$(echo "$git_status" | sed 's/^ M //')
+git_status=${git_status// M /}
 
-# Loop through the modified files
+Loop through the modified files
 echo "$git_status" | while IFS= read -r file; do
     git add "$file"
     git commit -m "$message$file"
