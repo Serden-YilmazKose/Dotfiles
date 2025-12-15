@@ -13,7 +13,7 @@ mullvad relay set location "$relay" > /dev/null || exit 1
 
 # Get Mullvad status, and use parameter expression to extract the country
 # We need a while loop, since mullvad status may return nothing
-for i in {1..50}; do
+for _ in {1..50}; do
     mullvad_status=$(mullvad status | grep "Visible location")
     [[ -n "$mullvad_status" ]] && break
     sleep 0.1
