@@ -9,7 +9,7 @@ cd "$tmp_dir" || exit 1
 url=$(xclip -selection clipboard -o -t text/plain | head -n 1 | xargs)
 
 # Check if url has an ampersand in it, if so, sanitize it
-echo "$url" | grep -q "&" && url=$($HOME/.local/bin/sanitize_youtube.sh "$url" silent)
+echo "$url" | grep -q "&" && url=$("$HOME"/.local/bin/sanitize_youtube.sh "$url" silent)
 [[ -z "$url" ]] && notify-send "yt-dlp" "No URL found in clipboard." && exit 1
 
 # Notify that download has started
