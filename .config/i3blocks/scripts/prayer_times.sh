@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Define the prayer times CSV file path (use the full path to avoid issues with ~ expansion)
 csv_file="/home/$USER/.config/i3blocks/scripts/prayer_times.csv"
@@ -52,12 +52,12 @@ for prayer_time in "$shuruuq_timestamp" "$fajr_timestamp" "$dhuhr_timestamp" "$a
     if [ "$prayer_time" -gt "$current_time_timestamp" ]; then
         [ "$prayer_time" -eq "$shuruuq_timestamp" ] && current_prayer="🛏️"
         [ "$prayer_time" -eq "$fajr_timestamp" ] && current_prayer="🌅"
-        [ "$prayer_time" -eq "$dhuhr_timestamp" ] && current_prayer="🌃"
+        [ "$prayer_time" -eq "$dhuhr_timestamp" ] && current_prayer="⏳"
         [ "$prayer_time" -eq "$asr_timestamp" ] && current_prayer="☀️"
         [ "$prayer_time" -eq "$maghrib_timestamp" ] && current_prayer="⛅"
         [ "$prayer_time" -eq "$isha_timestamp" ] && current_prayer="🌙"
         # Time left in minutes
-        time_left=$((($prayer_time - $current_time_timestamp) / 60))
+        time_left=$(((prayer_time - current_time_timestamp) / 60))
         break
     fi
 done
@@ -73,7 +73,7 @@ if [ -z "$current_prayer" ]; then
     shuruuq_ts=$(date -d "$tomorrow_date $shuruuq_24h" +%s)
 
     current_prayer="🌅"
-    time_left=$((($shuruuq_ts - $current_time_timestamp) / 60 ))
+    time_left=$(((shuruuq_ts - current_time_timestamp) / 60 ))
 fi
 
 echo "$current_prayer: $time_left mins"
