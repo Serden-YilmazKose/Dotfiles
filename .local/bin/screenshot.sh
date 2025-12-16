@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 # Get screenshot type from command argument, otherwise ask for it using dmenu
-[[ ! -z "$1" ]] && style="$1" || style=$(echo -e "file_full\nfile_active\nfile_select\nclip_full\nclip_active\nclip_select" | dmenu -l 6 -p "Select screenshot type: ")
+{ [ ! -z "$1" ] && style="$1" ;} || style=$(printf '%s\n' file_full file_active file_select clip_full clip_active clip_select | dmenu -l 6 -p "Select screenshot type: ")
+[ -z "$style" ] && exit 1
 
 # Case statement to go through the different style
 case $style in

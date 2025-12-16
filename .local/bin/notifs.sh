@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get the Telegram window name, then use paramterer expansion to get the number
 for class in $(xdotool search --class Telegram);do
@@ -9,7 +9,7 @@ telegram="${telegram##*\(}"
 telegram="${telegram%%\)*}"
 
 # Return 0, if telegram is now empty
-[[ -z "$telegram" ]] && telegram=0
+[ -z "$telegram" ] && telegram=0
 
 # Search for the signal window
 for class in $(xdotool search --class signal);do
@@ -18,7 +18,7 @@ for class in $(xdotool search --class signal);do
 done
 signal="${signal##*\(}"
 signal="${signal%%\)*}"
-[[ -z "$signal" ]] && signal=0
+[ -z "$signal" ] && signal=0
 
 # Search for the whatsapp window
 for class in $(xdotool search --class firefox);do
@@ -27,7 +27,7 @@ for class in $(xdotool search --class firefox);do
 done
 whatsapp="${whatsapp##*\(}"
 whatsapp="${whatsapp%%\)*}"
-[[ -z "$whatsapp" ]] && whatsapp=0
+[ -z "$whatsapp" ] && whatsapp=0
 
 total=$((whatsapp + signal + telegram))
 echo "$total"

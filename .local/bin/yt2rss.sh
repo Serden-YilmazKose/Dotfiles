@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Get YouTube URLs from file, and output to the file
 output_to_file() {
     output_file=youtube_rss_links.txt
@@ -19,7 +19,7 @@ output_to_clip() {
     html=$(curl -s "$url")
     channel_id=$(echo "$html" | grep -oP 'channel_id=[a-zA-Z0-9_-]+' | head -n1 | cut -d= -f2) || return
     channel_name=$(echo "$html" | grep -oP '(?<=<title>).*?(?=</title>)' | sed 's/ - YouTube//' | tr -d '\n')
-    echo -n "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id youtube # $channel_name" | xclip -selection clipboard && notify-send "yt2rss" "Youtube RSS feed copied to clipboard!"
+    printf '%s' "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id youtube # $channel_name" | xclip -selection clipboard && notify-send "yt2rss" "Youtube RSS feed copied to clipboard!"
 }
 # Get file containing list of YouTube Channel URLs, if provided as an arugment
 # If no argument was provided, output the RSS feed to the clipboard

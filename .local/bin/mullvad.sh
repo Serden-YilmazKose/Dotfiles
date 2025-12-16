@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # If some mullvad.sh is running, quit
 # You can manually kill using the killer command
 # running=$(pgrep -c -f mullvad.sh)
@@ -13,10 +13,12 @@ mullvad relay set location "$relay" > /dev/null || exit 1
 
 # Get Mullvad status, and use parameter expression to extract the country
 # We need a while loop, since mullvad status may return nothing
-for _ in {1..50}; do
+i=0
+while [ "$i" -lt 50 ]; do
     mullvad_status=$(mullvad status | grep "Visible location")
-    [[ -n "$mullvad_status" ]] && break
+    [ -n "$mullvad_status" ] && break
     sleep 0.1
+    i=$(( i + 1 ))
 done
 # mullvad_status=$(mullvad status)
 mullvad_status="${mullvad_status#*Visible location:*}"
@@ -25,8 +27,8 @@ mullvad_status="${mullvad_status%%.*}"
 mullvad_status="${mullvad_status##* }"
 
 # If the status is USA, change to United States
-[[ "$mullvad_status" == "USA" ]] && mullvad_status="United States"
-[[ "$mullvad_status" == "UK" ]] && mullvad_status="United Kingdom"
+[ "$mullvad_status" = "USA" ] && mullvad_status="United States"
+[ "$mullvad_status" = "UK" ] && mullvad_status="United Kingdom"
 
 # Specify emoji file as emoji_file
 emoji_file="$HOME/.local/share/files/emoji"

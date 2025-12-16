@@ -1,9 +1,8 @@
 #!/bin/sh
 
 focused_window=$(xdotool getwindowfocus -f)
-output=$(xdotool getwindowgeometry --shell "$focused_window")
-width=$(echo $output | awk '{print $4}' | cut -d "=" -f 2)
-height=$(echo $output | awk '{print $5}' | cut -d "=" -f 2)
-move_y=$((height / 8))
-move_x=$((width / 4))
+# Use eval instead of arking and cutting the output
+eval "$(xdotool getwindowgeometry --shell "$focused_window")" || exit 1
+move_y=$((HEIGHT / 8))
+move_x=$((WIDTH / 4))
 xdotool mousemove --window "$focused_window" $move_x $move_y
