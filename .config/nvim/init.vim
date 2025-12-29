@@ -1,4 +1,4 @@
-"************************
+" ************************
 "* General Usability
 " ************************
 syntax on
@@ -10,6 +10,7 @@ syntax enable
 set termguicolors
 set splitright
 
+
 " ************************
 "* Plugins
 " ************************
@@ -19,25 +20,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
-Plug 'tmsvg/pear-tree'
 Plug 'alvan/vim-closetag'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'folke/tokyonight.nvim', { 'as': 'tokyo' }
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'xuhdev/vim-latex-live-preview'
-"
-" Plug 'lervag/vimtex'
-" Plug 'plasticboy/vim-markdown'
-" Plug 'iamcco/markdown-preview.nvim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
 " ************************
 "* Customizing Plugins
 " ************************
-
 " Enable ALE linting
 let g:ale_enable_linting = 1
 
@@ -81,20 +72,16 @@ let g:indentLine_concealcursor = 'nc'
 let g:indentLine_conceallevel = 2
 let g:indentLine_showTrailingBlanklineIndent = 1
 
-" Vim preview
-let g:livepreview_engine_cmd = 'pdflatex % && bibtex %:r && pdflatex % && pdflatex %'
-let g:livepreview_previewer = 'evince'
-
 
 " ************************
 "* Set filetype
 " ************************
-
 " Set .asm file type to nasm
 augroup nasm_ft
   autocmd!
   autocmd BufNewFile,BufRead *.asm set filetype=nasm
 augroup END
+
 
 " ************************
 "* Keyboard Bindings
@@ -216,4 +203,3 @@ inoremap <C-H> <C-W>
 " ************************
 " Color scheme
 colorscheme dracula
-" colorscheme tokyonight
