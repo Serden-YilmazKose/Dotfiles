@@ -2,7 +2,6 @@
 # If some mullvad.sh is running, quit
 # You can manually kill using the killer command
 # running=$(pgrep -c -f mullvad.sh)
-# [[ $(("$running")) -eq 1 ]] || exit 1
 
 # Get random relay from the file
 relay_file="$HOME/.local/share/files/servers"
