@@ -12,14 +12,10 @@ cd "$i3_config_location" || exit 1
 keyboard=$(cat "$file")
 [ "$keyboard" = "us" ] && echo "us dvorak" > $file
 [ "$keyboard" = "us dvorak" ] && echo "us" > $file
-# [[ "$keyboard" == "us dvorak" ]] && echo "us colemak_dh" > $file
-# [[ "$keyboard" == "us colemak_dh" ]] && echo "us" > $file
 echo "$keyboard"
 keyboard=$(cat "$file")
 setxkbmap $keyboard
 echo "$keyboard"
 notify-send -t 3000 "Keyboard Layout" "Current Layout: $keyboard"
-# [[ $(cat $file)=="us dvorak" ]] && setxkbmap $(cat $file) && echo "fi" > $file
-# [[ $(cat $file)=="fi" ]] && setxkbmap $(cat $file) && echo "us" > $file\
 
 setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return" && xmodmap -e "keycode 62 = BackSpace"
