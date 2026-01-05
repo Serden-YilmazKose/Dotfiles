@@ -116,6 +116,10 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#########################
+####### MY CONFIG #######
+#########################
+
 # USE VI MODE
 set -o vi
 
@@ -136,11 +140,7 @@ alias caps='setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return"'
 alias c='clear'
 alias dot='cd $HOME/Documents/repos/Dotfiles'
 
-# Some line I had to add to make the tesseract ocr work, idk why
-export TESSDATA_PREFIX=/usr/share/tessdata
-
-# Some thing for my snes constroller
-export SDL_GAMECONTROLLERCONFIG="0300e9f579000000110000001001000012117,Retro Controller,platform:Linux,a:b1,b:b2,x:b0,y:b3,back:b8,start:b9,leftshoulder:b4,rightshoulder:b5,dpup:a1-,dpdown:a1,dpleft:a0-,dpright:a0,"
-export VISUAL=nvim
-export EDITOR=nvim
-export SUDO_ASKPASS=/usr/bin/ssh-askpass
+# ENABLE CASE INSENSITIVE COMPLETION
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
