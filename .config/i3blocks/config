@@ -43,6 +43,11 @@ label=🗨️
 command=~/.local/bin/notifs.sh
 interval=60
 
+[currency]
+label=💱
+command=~/.local/bin/currency.sh
+interval=60
+
 [tztime-local]
 label=🇺🇸
 command=TZ=America/Chicago date "+%H:%M"
