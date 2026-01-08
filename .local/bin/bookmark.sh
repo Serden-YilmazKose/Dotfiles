@@ -3,4 +3,4 @@
 file=/$HOME/.i3/bookmarks.txt
 bookmark=$(cat "$file" | dmenu -i -l 20 -p "Search for a bookmark: " | sed "s/ #.*$//")
 xdotool type "$bookmark"
-echo "$bookmark" | grep -q -E "^http.://|^about:profiles" && xdotool key Enter
+echo "$bookmark" | grep -q -E "^http.://|^about:profiles$|^about:debugging$" && xdotool key Enter
