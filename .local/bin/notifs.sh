@@ -20,14 +20,19 @@ signal="${signal##*\(}"
 signal="${signal%%\)*}"
 [ -z "$signal" ] && signal=0
 
-# Search for the whatsapp window
+# Search for the Whatsapp and Discord window
 for class in $(xdotool search --class firefox);do
     tmp=$(xdotool getwindowname "$class")
     echo "$tmp" | grep -qE "^\([0-9]+\).*WhatsApp" && whatsapp="$tmp" && break
+    echo "$tmp" | grep -qE "^\([0-9]+\).*Discord" && discord="$tmp" && break
 done
 whatsapp="${whatsapp##*\(}"
 whatsapp="${whatsapp%%\)*}"
 [ -z "$whatsapp" ] && whatsapp=0
 
-total=$((whatsapp + signal + telegram))
+discord="${discord##*\(}"
+discord="${discord%%\)*}"
+[ -z "$discord" ] && discord=0
+
+total=$((whatsapp + signal + telegram + discord))
 echo "$total"
