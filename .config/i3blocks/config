@@ -59,10 +59,10 @@ command=TZ=Europe/Helsinki date "+%m/%d %H:%M:%S"
 interval=1
 
 [prayer]
-command=~/.config/i3blocks/scripts/prayer_times.sh
+command=~/.local/bin/prayer_times.sh
 interval=60
 
 [volume]
-command=~/.config/i3blocks/scripts/volume.sh
+command=~/.local/bin/volume.sh
 interval=once
 signal=6

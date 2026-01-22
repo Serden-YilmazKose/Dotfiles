@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Define the prayer times CSV file path (use the full path to avoid issues with ~ expansion)
-csv_file="/home/$USER/.config/i3blocks/scripts/prayer_times.csv"
+csv_file="/home/$USER/.local/share/files/prayer_times.csv"
 
 # Get the current date (in the format MM/DD)
 current_date=$(date +'%m/%d')
