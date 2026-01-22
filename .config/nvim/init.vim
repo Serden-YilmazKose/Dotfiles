@@ -21,6 +21,7 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
+Plug 'hat0uma/csvview.nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
