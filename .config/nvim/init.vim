@@ -9,6 +9,8 @@ set smartindent
 syntax enable
 set termguicolors
 set splitright
+ " Don't bring nvim cursor to the terminal upon quitting
+autocmd VimLeave * set guicursor=a:ver25-blinkon0
 
 
 " ************************
