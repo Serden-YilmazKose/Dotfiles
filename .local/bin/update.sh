@@ -8,4 +8,5 @@ updates=$(pacman -Qu)
 
 # Update i3blocks
 package_number=$(echo "$updates" | grep -cF ">")
-echo "$package_number"
+package_number=$((package_number))
+{ [ "$package_number" -eq 0 ] && exit 0;} || echo "$package_number"

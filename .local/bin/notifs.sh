@@ -35,4 +35,5 @@ discord="${discord%%\)*}"
 [ -z "$discord" ] && discord=0
 
 total=$((whatsapp + signal + telegram + discord))
-echo "$total"
+
+{ [ "$total" -eq 0 ] && exit 1;} || echo "$total"
