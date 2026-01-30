@@ -86,6 +86,6 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 set -o vi
 
 # ENABLE CASE INSENSITIVE COMPLETION
-autoload -Uz compinit && compini
-zstyle ':conmpletion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':conmpletion:*' menu select
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
