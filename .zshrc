@@ -1,11 +1,12 @@
+# Code adapted from Luke Smith's voidrice dotfile repo
+# Source: https://github.com/LukeSmithxyz/voidrice
 # Luke's config for the Zoomer Shell
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
+stty stop undef		# Disable ctrl-s to freeze terminal. setopt interactive_comments
 
 # History in cache directory:
 HISTSIZE=10000000
@@ -64,11 +65,8 @@ lfcd () {
     fi
 }
 bindkey -s '^o' '^ulfcd\n'
-
 bindkey -s '^a' '^ubc -lq\n'
-
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
-
 bindkey '^[[P' delete-char
 
 # Edit line in vim with ctrl-e:
@@ -80,3 +78,14 @@ bindkey -M visual '^[[P' vi-delete
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+################################
+############ CONFIG ############
+################################
+# USE VI MODE
+set -o vi
+
+# ENABLE CASE INSENSITIVE COMPLETION
+autoload -Uz compinit && compini
+zstyle ':conmpletion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':conmpletion:*' menu select
