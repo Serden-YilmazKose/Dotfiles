@@ -76,4 +76,4 @@ if [ -z "$current_prayer" ]; then
     time_left=$(((shuruuq_ts - current_time_timestamp) / 60 ))
 fi
 
-echo "$current_prayer: $time_left mins"
+echo "$current_prayer $time_left mins"
