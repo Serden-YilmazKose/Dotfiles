@@ -1,16 +1,37 @@
 # DOTFILES CONFIG ALIAS
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ggp='git pull --ff-only'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias gs='git status'
-alias up='sudo pacman -Syu && yay -Syu ; pkill -RTMIN+3 i3blocks'
+# COLOR
+alias grep='/bin/grep --color=auto'
+alias ls='/bin/ls --color=auto'
+alias pacman='/bin/pacman --color=auto'
+alias tree='/bin/tree -C'
+alias yay='/bin/yay --color=auto'
+
+# INTERACTIVE FILE MANIPULATION
+alias cp='/bin/cp -i'
+alias mv='/bin/mv -i'
+alias rm='/bin/rm -i'
+
+# GIT
+alias gd='/bin/git diff'
+alias ggp='/bin/git pull --ff-only'
+alias ggpush='/bin/git push origin main'
+alias gs='/bin/git status'
+
+# CD
 alias ..='cd ..'
-alias grep='grep --color=auto'
+alias ...='cd ../../'
+
+# LS
+alias la='ls -lAh'
+alias ll='ls -lh'
+
+# REST
+alias sudo='sudo '
+alias up='sudo pacman -Syu && yay -Syu ; pkill -RTMIN+3 i3blocks'
+alias dot='cd $HOME/Documents/repos/Dotfiles'
 alias news='newsboat && pkill -RTMIN+4 i3blocks ; xdotool type "clear" ; xdotool key Enter'
-alias plover='PYTHONWARNINGS="ignore" plover'
+alias c='clear'
 alias dvo='setxkbmap us dvorak'
 alias aoeui='setxkbmap us'
 alias caps='setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return"'
-alias c='clear'
-alias dot='cd $HOME/Documents/repos/Dotfiles'
+alias plover='PYTHONWARNINGS="ignore" plover'
