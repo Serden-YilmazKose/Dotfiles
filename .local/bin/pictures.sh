@@ -4,5 +4,7 @@
 dir=$HOME/Pictures/lol
 cd "$dir" || exit 1
 # Not using ls
-input=$(ls -t | dmenu -l 15 -p "Select image to copy: ")
-xclip -selection clipboard -t image/png -i "$input"
+files=$(ls -t)
+input=$(echo -e "Random\n$files" | dmenu -l 15 -p "Select image to copy: ")
+{ [ "$input" = "Random"  ] && file=$(echo "$files" | shuf -n 1); } || file="$input"
+xclip -selection clipboard -t image/png -i "$file"
