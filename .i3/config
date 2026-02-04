@@ -315,6 +315,9 @@ bindsym $mod+o exec --no-startup-id ~/.local/bin/emoji.sh
 # Send all firefox windows to workspace 8
 bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to workspace 8'
 
+# OPEN LYRICS TO SONG, CREATE IF THEY DON'T EXIST
+bindsym $mod+F5 exec --no-startup-id  ~/.local/bin/lyrics.sh
+
 # SOUNDBOARD
 ## Bruh
 bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
