@@ -202,6 +202,12 @@ nnoremap ;; :LLPStart<CR>
 inoremap <C-H> <C-W>
 
 " ************************
+"* SNIPPETS
+" ************************
+" Basic program snipper in C++, with command line arguments in main()
+nnoremap ,cpp :-1read $HOME/.local/share/nvim/snips/HelloWorld.cpp<CR>/int main<CR>:noh <CR> jo
+
+" ************************
 "* Set Colorscheme
 " ************************
 " Color scheme
