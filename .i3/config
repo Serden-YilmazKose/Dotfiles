@@ -318,6 +318,9 @@ bindsym $mod+Ctrl+f exec --no-startup-id i3-msg '[class="firefox"] move to works
 # OPEN LYRICS TO SONG, CREATE IF THEY DON'T EXIST
 bindsym $mod+F5 exec --no-startup-id  ~/.local/bin/lyrics.sh
 
+# DUPLICATE TERMINAL WINDOW, USING SAME CWD
+bindsym $mod+x exec --no-startup-id  ~/.local/bin/dupe.sh
+
 # SOUNDBOARD
 ## Bruh
 bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
