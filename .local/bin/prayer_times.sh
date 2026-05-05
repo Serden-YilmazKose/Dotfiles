@@ -4,10 +4,10 @@
 csv_file="/home/$USER/.local/share/files/prayer_times.csv"
 
 # Get the current date (in the format MM/DD)
-current_date=$(date +'%m/%d')
+current_date=$(date +'%Y/%m/%d')
 
 # Extract today's prayer times using the current date
-today_data=$(grep -i "^$current_date" "$csv_file" | sed 's/^[ \t]*//;s/[ \t]*$//')
+today_data=$(grep --max-count 1 -i "^$current_date" "$csv_file" | sed 's/^[ \t]*//;s/[ \t]*$//')
 
 # If no data found for today, exit
 [ -z "$today_data" ] && echo "⁉️" && exit 1
