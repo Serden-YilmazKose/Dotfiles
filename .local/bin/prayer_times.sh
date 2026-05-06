@@ -64,7 +64,7 @@ done
 
 # Output the next prayer and time left
 if [ -z "$current_prayer" ]; then
-    tomorrow_date=$(date -d "tomorrow" +'%m/%d')
+    tomorrow_date=$(date -d "tomorrow" +'%Y/%m/%d')
     tomorrow_data=$(grep -i "^$tomorrow_date" "$csv_file")
     [ -z "$tomorrow_data" ] && echo "❓" && exit 1
 
