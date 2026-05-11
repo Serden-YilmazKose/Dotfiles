@@ -12,6 +12,15 @@ today_data=$(grep --max-count 1 -i "^$current_date" "$csv_file" | sed 's/^[ \t]*
 # If no data found for today, exit
 [ -z "$today_data" ] && echo "⁉️" && exit 1
 
+# The user can left-click to get all prayer times for the current day
+formatted_data="🌅: $(echo "$today_data" | cut -d ',' -f 3)
+⏳: $(echo "$today_data" | cut -d ',' -f 4)
+☀️: $(echo "$today_data" | cut -d ',' -f 5)
+⛅: $(echo "$today_data" | cut -d ',' -f 6)
+🌙: $(echo "$today_data" | cut -d ',' -f 7)
+🛏️: $(echo "$today_data" | cut -d ',' -f 8)"
+[ "$BLOCK_BUTTON" -eq 1 ] && notify-send "🕋 $current_date" "$formatted_data"
+
 # Extract the prayer times from the CSV line
 shuruuq=$(echo "$today_data" | cut -d ',' -f 3)
 fajr=$(echo "$today_data" | cut -d ',' -f 4)
