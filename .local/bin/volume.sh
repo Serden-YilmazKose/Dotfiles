@@ -14,9 +14,9 @@ SOUND_LEVEL=$(amixer -M get Master | awk -F"[][]" '/%/ { print $2 }' | awk -F"%"
 MUTED=$(amixer get Master | awk ' /%/{print ($NF=="[off]" ? 1 : 0); exit;}')
 ICON=$VOLUME_MUTE
 
-[ "$SOUND_LEVEL" -gt 0      ]   && [ "$SOUND_LEVEL" -lt 33  ]   && ICON="$VOLUME_LOW"
-[ "$SOUND_LEVEL" -gt 34     ]   && [ "$SOUND_LEVEL" -lt 66  ]   && ICON="$VOLUME_MID"
-[ "$SOUND_LEVEL" -gt 67     ]   && [ "$SOUND_LEVEL" -lt 100 ]   && ICON="$VOLUME_HIGH"
+[ "$SOUND_LEVEL" -gt 0      ]   && [ "$SOUND_LEVEL" -le 33  ]   && ICON="$VOLUME_LOW"
+[ "$SOUND_LEVEL" -ge 34     ]   && [ "$SOUND_LEVEL" -le 66  ]   && ICON="$VOLUME_MID"
+[ "$SOUND_LEVEL" -ge 67     ]   && [ "$SOUND_LEVEL" -lt 100 ]   && ICON="$VOLUME_HIGH"
 [ "$SOUND_LEVEL" -eq 100    ]                                   && ICON="$VOLUME_DANG"
 [ "$MUTED" = "1"            ]                                   && ICON="$VOLUME_MUTE"
 
