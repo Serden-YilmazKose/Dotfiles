@@ -321,6 +321,9 @@ bindsym $mod+F5 exec --no-startup-id  ~/.local/bin/lyrics.sh
 # DUPLICATE TERMINAL WINDOW, USING SAME CWD
 bindsym $mod+x exec --no-startup-id  ~/.local/bin/dupe.sh
 
+# LOCK SCREEN USING SCRIPT
+bindsym $mod+F1 exec --no-startup-id ~/.local/bin/screenlock.sh
+
 # SOUNDBOARD
 ## Bruh
 bindsym $mod+Mod2+KP_0 exec mpv --no-video $HOME/Music/soundboard/bruh.mp3
