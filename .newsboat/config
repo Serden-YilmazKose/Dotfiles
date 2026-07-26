@@ -1,5 +1,6 @@
 show-read-feeds no
 scrolloff 17
+save-path "~/Documents/personal/newsboat/"
 # auto-reload yes
 
 # external-url-viewer "urlscan -dc -r 'linkhandler {}'"
