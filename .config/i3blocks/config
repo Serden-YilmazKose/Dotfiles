@@ -50,12 +50,12 @@ interval=60
 
 [tztime-home]
 label=🇫🇮
-command=TZ=Europe/Helsinki date "+%H:%M"
+command=TZ=Europe/Helsinki date "+%m/%d %H:%M:%S"
 interval=1
 
 [tztime-local]
 label=🇺🇸
-command=TZ=America/Chicago date "+%m/%d %H:%M:%S"
+command=TZ=America/Chicago date "+%H:%M"
 interval=1
 
 [prayer]
