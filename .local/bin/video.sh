@@ -10,11 +10,10 @@ while [ ! -f "$video" ] ; do
     [ -z "$video" ] && exit 1
     ls | grep -qF "$video" || continue
     [ ! -d "$video" ] && [ ! -f "$video" ] && continue
-    pwd | grep -q "eighty"  && player="vlc"
     [ -d "$video" ]; cd "$video" && continue
     [ -f "$video" ]; $player "$video" && isOpened="true" && break
 done
 
-pwd | grep -qF "/lol" || { [ "$isOpened" = "true" ] && input=$(printf '%s\n' YES LOL | dmenu -i -p "What to do with video [YES/LOL]: ") ;}
+pwd | grep -qE "/lol|/kdenlive" || { [ "$isOpened" = "true" ] && input=$(printf '%s\n' YES LOL | dmenu -i -p "What to do with video [YES/LOL]: ") ;}
 [ "$input" = "YES" ] && rm -v "$video" && notify-send "Video" "$video deleted."
 [ "$input" = "LOL" ] && mv "$video" "$dir/lol" && notify-send "Video" "$video moved to lol."
