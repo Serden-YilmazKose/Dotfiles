@@ -6,6 +6,10 @@ csv_file="/home/$USER/.local/share/files/prayer_times.csv"
 # Get the current date (in the format MM/DD)
 current_date=$(date +'%Y/%m/%d')
 
+# If user right clicks, add one day
+BUTTON=$((BLOCK_BUTTON))
+[ $BUTTON -eq 3 ] && current_date=$(date -d "${d//./-/} + 1 day" +%Y/%m/%d)
+
 # Extract today's prayer times using the current date
 today_data=$(grep --max-count 1 -i "^$current_date" "$csv_file" | sed 's/^[ \t]*//;s/[ \t]*$//')
 
@@ -27,7 +31,10 @@ formatted_data="🌅: "$shuruuq"
 ⛅: "$asr"
 🌙: "$maghrib"
 🛏️: "$isha""
-[ "$((BLOCK_BUTTON))" -eq 1 ] && notify-send "🕋 $current_date" "$formatted_data"
+
+# Show times for today or tomorrow, depends on user input, then reset data
+[ $((BUTTON)) -eq 1 ] && notify-send "🕋 $current_date" "$formatted_data"
+[ $((BUTTON)) -eq 3 ] && notify-send "🕋 $current_date" "$formatted_data" && echo "$full_text"
 
 # Convert the prayer times to 24-hour format
 convert_to_24h() {
