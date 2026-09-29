@@ -22,6 +22,8 @@ open_lyrics() {
 create_lyrics() {
     cp "$lyrics_template" "$file"
     st nvim "$file"
+    # Delete if nothing has been changed (compare hashes)
+    diff "$lyrics_template" "$file" > /dev/null && /bin/rm "$file" && notify-send "Lyrics" "No changes made, exiting." && exit 1
 }
 
 # Check if needed components exist on the system
