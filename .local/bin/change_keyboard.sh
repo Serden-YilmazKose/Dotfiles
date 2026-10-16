@@ -1,21 +1,34 @@
 #!/bin/sh
 
-# Define location and file name
-i3_config_location="$HOME/.i3"
-file="keyboard.txt"
-cd "$i3_config_location" || exit 1
+# Get current keyboard layout
+keyboard_query=$(setxkbmap -query)
+layout=$(echo "$keyboard_query" | grep -F "layout:")
+layout=${layout##* }
+variant=$(echo "$keyboard_query" | grep -F "variant:")
+variant=${variant##* }
 
-# Create keyboard layout file if it does not exist
-[ ! -f $file ] && echo "us" > "$file"
+[ -n "$variant" ] && keyboard="$layout $variant"
+[ -z "$variant" ] && keyboard="$layout"
 
-# If us, change to dvorak, vice verse
-keyboard=$(cat "$file")
-[ "$keyboard" = "us" ] && echo "us dvorak" > $file
-[ "$keyboard" = "us dvorak" ] && echo "us" > $file
-echo "$keyboard"
-keyboard=$(cat "$file")
-setxkbmap $keyboard
-echo "$keyboard"
-notify-send -t 3000 "Keyboard Layout" "Current Layout: $keyboard"
+# Set keyboard to the next one
+case "$keyboard" in
+    "us")
+        new_layout="us\(dvorak\)"
+        ;;
+    "us\(dvorak\)")
+        new_layout="ara\(buckwalter\)"
+        ;;
+    "ara\(buckwalter\)")
+        new_layout="us"
+        ;;
+    *)
+        new_layout="us"
+        ;;
+esac
+
+setxkbmap "$new_layout"
+
+# Send notification
+notify-send -t 3000 "Keyboard Layout" "Current Layout: $new_layout"
 
 setxkbmap -option caps:none && xmodmap -e "keycode 66 = Return" && xmodmap -e "keycode 62 = BackSpace"
