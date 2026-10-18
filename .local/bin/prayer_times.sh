@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Get button clicked
+# 1: Left Click
+# 1: Middle Click
+# 3: Right Click
+BUTTON=$((BLOCK_BUTTON))
+
+# If the user clicks the middle mouse button, open up the prayer times csv file
+[ $BUTTON -eq 2 ] && st /usr/bin/nvim ~/.local/share/files/prayer_times.csv +"$(grep -n "$(date +'%Y/%m/%d')" ~/.local/share/files/prayer_times.csv | cut -f1 -d:)"
+
 # Define the prayer times CSV file path (use the full path to avoid issues with ~ expansion)
 csv_file="/home/$USER/.local/share/files/prayer_times.csv"
 
@@ -7,7 +16,6 @@ csv_file="/home/$USER/.local/share/files/prayer_times.csv"
 current_date=$(date +'%Y/%m/%d')
 
 # If user right clicks, add one day
-BUTTON=$((BLOCK_BUTTON))
 [ $BUTTON -eq 3 ] && current_date=$(date -d "${d//./-/} + 1 day" +%Y/%m/%d)
 
 # Extract today's prayer times using the current date
