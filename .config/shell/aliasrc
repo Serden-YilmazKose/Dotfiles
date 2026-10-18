@@ -27,6 +27,7 @@ alias ll='ls -lh'
 
 # REST
 alias sudo='sudo '
+alias pdf='~/.local/bin/pdf.sh'
 alias up='sudo pacman -Syu && yay -Syu ; pkill -RTMIN+3 i3blocks'
 alias dot='cd $HOME/Documents/repos/Dotfiles'
 alias news='newsboat && pkill -RTMIN+4 i3blocks ; xdotool type "clear" ; xdotool key Enter'
